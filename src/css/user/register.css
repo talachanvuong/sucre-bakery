@@ -1,0 +1,205 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: rgb(255, 226, 226); 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    background-color: rgb(71, 12, 14);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    transition: 0.6s;
+}
+
+
+header .logo {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: bisque;
+    transition: 0.6s;
+}
+
+
+.navi ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navi ul li a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: bisque;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: 0.6s;
+    font-size: 15px;
+}
+
+.navi ul li a:hover {
+    background-color: bisque;
+    color: rgb(84, 35, 37);
+}
+
+/*smaller tab*/
+@media (max-width: 920px){
+    header .logo{
+        font-size: 20px;
+    }
+    .navi ul li a{
+        margin: 0 5px;
+        font-size: 13px;
+    }
+}
+
+/*mobile*/
+.menu-dropdown {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    header .logo{
+        font-size: 20px;
+    }
+    .navi ul {
+        display: none;
+        position: fixed; 
+        top: 63px;
+        right: 0;
+        width: 150px;
+        height: 180px;
+        background-color: rgba(71, 12, 14, 0.700); 
+        z-index: 9999;
+        flex-direction: column; 
+    }
+
+    .navi ul li {
+        margin-bottom: 10px; 
+        width: 100%;
+        text-align: left;
+    }
+
+    .navi ul li a {
+        display: block;
+        padding: 8px;
+        text-decoration: none;
+        color: bisque;
+        font-size: 15px;
+        font-weight: bold;
+        width: 100%;
+        border-radius: 0%;
+    }
+
+    .navi ul.show {
+        display: flex;
+        box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu-dropdown {
+        display: block;
+        background-color: rgba(71, 12, 14);
+        color: bisque;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        position: fixed;
+        right: 0;
+        z-index: 10000;
+    }
+}
+
+.register-container {
+    margin-top: 90px;
+    background-color: rgb(253, 245, 237);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: absolute;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: rgb(84, 35, 37);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: bisque;
+    color: rgb(84, 35, 37);
+}
+
+
+.login-link {
+    margin-top: 15px;
+}
+
+.login-link p {
+    font-size: 14px;
+    color: #333;
+}
+
+.login-link a {
+    color: rgb(71, 12, 14);
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

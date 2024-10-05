@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: rgb(255, 226, 226); 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    background-color: rgb(71, 12, 14);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    transition: 0.6s;
+    
+}
+
+
+header .logo {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: bisque;
+    transition: 0.6s;
+}
+
+
+header ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header ul li a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: bisque;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: 0.6s;
+}
+
+header ul li a:hover {
+    background-color: bisque;
+    color: rgb(84, 35, 37);
+}
+
+.navi ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navi ul li a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: bisque;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: 0.6s;
+    font-size: 15px;
+}
+
+.navi ul li a:hover {
+    background-color: bisque;
+    color: rgb(84, 35, 37);
+}
+
+
+/*smaller tab*/
+@media (max-width: 850px){
+    header .logo{
+        font-size: 20px;
+    }
+    .navi ul li a{
+        margin: 0 5px;
+        font-size: 13px;
+    }
+}
+
+/*mobile*/
+.menu-dropdown {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    header .logo{
+        font-size: 20px;
+    }
+    .navi ul {
+        display: none;
+        position: fixed; 
+        top: 63px;
+        right: 0;
+        width: 150px;
+        height: 180px;
+        background-color: rgba(71, 12, 14, 0.700); 
+        z-index: 9999;
+        flex-direction: column; 
+    }
+
+    .navi ul li {
+        margin-bottom: 10px; 
+        width: 100%;
+        text-align: left;
+    }
+
+    .navi ul li a {
+        display: block;
+        padding: 8px;
+        text-decoration: none;
+        color: bisque;
+        font-size: 15px;
+        font-weight: bold;
+        width: 100%;
+        border-radius: 0%;
+    }
+
+    .navi ul.show {
+        display: flex;
+        box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu-dropdown {
+        display: block;
+        background-color: rgba(71, 12, 14);
+        color: bisque;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 30px;
+        position: fixed;
+        right: 0;
+        z-index: 10000;
+    }
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    position: center;
+    background-color: rgb(253, 245, 236);
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+h2 {
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.radio-group {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center; 
+}
+.radio-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+
+
+.radio-group input[type="radio"] {
+    margin-right: 10px; 
+}
+
+
+input[type="text"], input[type="date"], input[type="tel"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.discount-section, .tip-section {
+    margin-bottom: 20px;
+}
+.product-list {
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+table th {
+    background-color: #f8f8f8;
+}
+.total-section {
+    
+    text-align: right;
+    margin-bottom: 20px;
+}
+.total-section strong {
+    line-height: 2;
+    display: block;
+    font-size: 18px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(58, 11, 11);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 15px;
+}
+.submit-btn:hover {
+    font-weight: 15px;
+    font-size: 20px;
+    color: rgb(58, 11, 11);
+    background-color: bisque;
+}
+
