@@ -10,7 +10,7 @@ class Api
         $hostname = "localhost";
         $username = "root";
         $password = "";
-        $database = "db_bakery_web";
+        $database = "db_sucre_web";
         $this->connection = new mysqli($hostname, $username, $password, $database);
     }
 
