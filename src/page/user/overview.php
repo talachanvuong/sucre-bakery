@@ -31,8 +31,7 @@ $product = $api->get_products_by_type($pdt_id);
                 <?php } else {
                     foreach ($productType as $row) {
                         ?>
-                        <button class="product-type"
-                            onclick="redirect(<?php echo $row["pdt_id"]; ?>)">
+                        <button class="product-type" onclick="redirect(<?php echo $row["pdt_id"]; ?>)">
                             <?php echo $row["pdt_name"] ?>
                         </button>
                     <?php }

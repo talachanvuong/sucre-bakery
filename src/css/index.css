@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../public/font/Roboto.ttf);
+}
+
+@property --brown-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgb(71, 12, 14);
+}
+
+@property --bisque-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgb(255,228,196);
+}
+
+@property --pink-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgb(255, 226, 226);
+}
+
+@property --hover-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgb(84, 35, 37);
+}
