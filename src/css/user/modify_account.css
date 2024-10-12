@@ -130,8 +130,7 @@ header .logo {
         z-index: 10000;
     }
 }
-
-.login-container {
+.modify-container {
     background-color: rgb(253, 245, 237);
     padding: 20px 40px;
     border-radius: 10px;
@@ -141,7 +140,7 @@ header .logo {
     text-align: center;
 }
 
-.login-container h2 {
+.modify-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
@@ -182,17 +181,4 @@ header .logo {
 .btn:hover {
     background-color: bisque;
     color: rgb(84, 35, 37);
-}
-
-.register {
-    margin-top: 15px;
-}
-
-.register p {
-    font-size: 14px;
-    color: #333;
-}
-
-.register a {
-    color: rgb(71, 12, 14);
 }
