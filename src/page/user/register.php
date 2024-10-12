@@ -29,22 +29,22 @@
 
             <div class="input-group">
                 <label for="username">Tên:</label>
-                <input type="text" id="username" name="username" placeholder="Nhập tên" required>
+                <input type="text" id="username" name="username" placeholder="Nhập tên" >
             </div>
             <div class="input-group">
-                <label for="email">Gmail:</label>
-                <input type="email" id="email" name="email" placeholder="Nhập Gmail" required>
+                <label for="Phone">Số Điện thoại:</label>
+                <input type="number" id="phone" name="phone" placeholder="Nhập Số điện thoại" >
             </div>
             <div class="input-group">
                 <label for="password">Mật khẩu</label>
-                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" >
             </div>
             <div class="input-group">
                 <label for="confirm-password">Xác nhận mật khẩu:</label>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận mật khẩu"
-                    required>
+                    >
             </div>
-            <button type="submit" class="btn">Đăng ký</button>
+            <button type="submit" name="btn-reg" class="btn">Đăng ký</button>
             <div class="login-link">
                 <p>Đã có tài khoản? <a href="login.php">Đăng nhập ngay</a></p>
             </div>

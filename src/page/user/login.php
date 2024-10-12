@@ -27,12 +27,12 @@
         <form action="login.php" method="post">
 
             <div class="input-group">
-                <label for="email">Gmail:</label>
-                <input type="email" id="email" name="email" placeholder="Nhập Gmail" required>
+                <label for="phone">Số điện thoại</label>
+                <input type="number" name="phone" placeholder="Nhập Gmail">
             </div>
             <div class="input-group">
                 <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu">
             </div>
             <button type="submit" class="btn">Đăng nhập</button>
             <div class="register">
