@@ -135,8 +135,8 @@ header .logo {
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    width: 50%;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -144,6 +144,12 @@ header .logo {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
+}
+/*mobile*/
+@media (max-width: 800px){
+    .modify-container h2{
+        font-size: 20px;
+    }
 }
 
 .input-group {

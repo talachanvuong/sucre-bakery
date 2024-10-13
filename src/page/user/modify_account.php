@@ -26,7 +26,7 @@
 
             <div class="input-group">
                 <label for="name">Họ và tên:</label>
-                <input type="name" id="name" name="name" placeholder="Nhập họ và tên cảu bạn" required>
+                <input type="name" id="name" name="name" placeholder="Nhập họ và tên của bạn" required>
             </div>
             <div class="input-group">
                 <label for="address">Địa chỉ:</label>
