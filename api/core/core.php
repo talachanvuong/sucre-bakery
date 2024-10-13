@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../product.php";
-require_once __DIR__ . ("/../registerUsers.php");
-require_once __DIR__ . ("/../loginUsers.php");
+require_once __DIR__ . "/../registerUsers.php";
+require_once __DIR__ . "/../loginUsers.php";
 class Api
 {
     private $connection;

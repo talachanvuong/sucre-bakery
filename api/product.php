@@ -38,10 +38,10 @@ trait Product
     {
         $pd_image = "0x" . bin2hex(file_get_contents($pd_image));
 
-        // pd_image is image so doesn't need to put into ""
+        // pd_image is image so doesn't need to put into ''
         $sql = "INSERT INTO `product` (`pd_name`, `pd_price`, `pd_description`, `pdt_id`, `pd_image`)
             VALUES
-            (\"$pd_name\", $pd_price, \"$pd_description\", $pdt_id, $pd_image);";
+            ('$pd_name', $pd_price, '$pd_description', $pdt_id, $pd_image);";
 
         try {
             $this->connection->query($sql);
@@ -75,7 +75,7 @@ trait Product
         $pd_image = $product["pd_image"] ?? null;
 
         if ($pd_name) {
-            $update .= "`pd_name` = \"$pd_name\",";
+            $update .= "`pd_name` = '$pd_name',";
         }
 
         if ($pd_price) {
@@ -83,7 +83,7 @@ trait Product
         }
 
         if ($pd_description) {
-            $update .= "`pd_description` = \"$pd_description\",";
+            $update .= "`pd_description` = '$pd_description',";
         }
 
         if ($pdt_id) {
@@ -93,7 +93,7 @@ trait Product
         if ($pd_image) {
             $pd_image = "0x" . bin2hex(file_get_contents($pd_image));
 
-            // pd_image is image so doesn't need to put into ""
+            // pd_image is image so doesn't need to put into ''
             $update .= "`pd_image` = $pd_image,";
         }
 
