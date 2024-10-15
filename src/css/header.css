@@ -1,0 +1,47 @@
+header {
+  position: fixed;
+  background-color: var(--brown-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.header-logo {
+    font-family: "Roboto";
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--bisque-color);
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.header-navigation {
+    display: flex;
+}
+
+.header-option {
+    font-family: "Roboto";
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--bisque-color);
+    font-weight: bold;
+
+    border-radius: 9999px;
+    padding: 5px 15px;
+    transition: 0.6s;
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-option:hover {
+    background-color: var(--bisque-color);
+    color: var(--brown-color);
+}

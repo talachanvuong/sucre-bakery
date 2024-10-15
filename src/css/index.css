@@ -26,3 +26,11 @@
   inherits: false;
   initial-value: rgb(84, 35, 37);
 }
+
+body {
+  background-color: var(--pink-color);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}

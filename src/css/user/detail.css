@@ -1,0 +1,71 @@
+.layoutContainer {
+  width: 80%;
+  padding-top: calc(80px + 86px); /* Header: 86px */
+  padding-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
+  @media (min-width: 640px) {
+    width: 60%;
+  }
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+}
+
+.menu-left {
+  width: 50%;
+  background-color: pink;
+  padding: 8px;
+}
+
+.menu-main {
+  width: 50%;
+  background-color: bisque;
+  padding: 20px;
+}
+
+.product-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+.product-image {
+  width: 100%;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Roboto";
+  margin-top: 12px;
+}
+
+.product-price {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.product-type {
+  width: 100%;
+  font-size: 18px;
+  text-align: left;
+  font-family: "Roboto";
+  font-weight: 600;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: peru;
+  border: none;
+  cursor: pointer;
+}

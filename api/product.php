@@ -1,6 +1,17 @@
 <?php
 trait Product
 {
+    function get_product_by_id(int $pd_id)
+    {
+        $sql = "SELECT `pd_id`, `pd_name`, `pd_price`, `pd_description`, `pd_image`
+                FROM `product`
+                WHERE `pd_id` = $pd_id;";
+
+        $result = $this->connection->query($sql);
+
+        return $result->fetch_assoc();
+    }
+
     function get_products_by_type(int $pdt_id)
     {
         $sql = "SELECT `pd_id`, `pd_name`, `pd_price`, `pd_description`, `pd_image`

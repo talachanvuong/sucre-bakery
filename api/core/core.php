@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/../product.php";
-require_once __DIR__ . "/../registerUsers.php";
-require_once __DIR__ . "/../loginUsers.php";
+require __DIR__ . "/../product.php";
+require __DIR__ . "/../registerUsers.php";
+require __DIR__ . "/../loginUsers.php";
 class Api
 {
     private $connection;
@@ -20,6 +20,6 @@ class Api
     use Login;
 }
 
-require_once __DIR__ . "/load_image.php";
+require __DIR__ . "/load_image.php";
 
 $api = new Api();
