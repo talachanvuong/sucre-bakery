@@ -1,9 +1,27 @@
 <?php
 trait Product
 {
-    function get_product_by_id(int $pd_id)
+    function get_products_by_keyword(string $keyword)
     {
         $sql = "SELECT `pd_id`, `pd_name`, `pd_price`, `pd_description`, `pd_image`
+                FROM `product`
+                WHERE `pd_name` LIKE '%$keyword%'
+                ORDER BY `pd_id` ASC;";
+
+        $result = $this->connection->query($sql);
+
+        $data = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+
+        return $data;
+    }
+
+    function get_product_by_id(int $pd_id)
+    {
+        $sql = "SELECT *
                 FROM `product`
                 WHERE `pd_id` = $pd_id;";
 
@@ -29,10 +47,22 @@ trait Product
         return $data;
     }
 
+    function get_product_type_by_id(int $pdt_id)
+    {
+        $sql = "SELECT *
+                FROM `product_type`
+                WHERE `pdt_id` = $pdt_id;";
+
+        $result = $this->connection->query($sql);
+
+        return $result->fetch_assoc();
+    }
+
     function get_product_types()
     {
         $sql = "SELECT *
-                FROM `product_type`;";
+                FROM `product_type`
+                ORDER BY `pdt_id` ASC;";
 
         $result = $this->connection->query($sql);
 
@@ -112,8 +142,8 @@ trait Product
         if ($update == "") {
             return "Không có gì thay đổi!";
         }
-        
-        $update = rtrim($update, ',') ;
+
+        $update = rtrim($update, ',');
 
         $sql = "UPDATE `product`
             SET $update

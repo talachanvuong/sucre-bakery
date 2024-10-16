@@ -21,5 +21,6 @@ class Api
 }
 
 require __DIR__ . "/load_image.php";
+require __DIR__ . "/convert_currency.php";
 
 $api = new Api();

@@ -15,10 +15,7 @@ header {
     line-height: 36px;
     color: var(--bisque-color);
     font-weight: bold;
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 .header-navigation {
@@ -36,9 +33,7 @@ header {
     padding: 5px 15px;
     transition: 0.6s;
 
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 .header-option:hover {

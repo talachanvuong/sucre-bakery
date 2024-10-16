@@ -1,0 +1,20 @@
+<div class="layout-container">
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        <form method="post">
+            <div class="input-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10"
+                    placeholder="Nhập số điện thoại của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+            </div>
+            <input type="submit" class="btn" value="Đăng nhập">
+            <div class="register">
+                <p>Chưa có tài khoản? <a href="?direct=register">Đăng ký ngay.</a></p>
+            </div>
+        </form>
+    </div>
+</div>

@@ -12,7 +12,7 @@
 @property --bisque-color {
   syntax: "<color>";
   inherits: false;
-  initial-value: rgb(255,228,196);
+  initial-value: rgb(255, 228, 196);
 }
 
 @property --pink-color {
@@ -21,10 +21,22 @@
   initial-value: rgb(255, 226, 226);
 }
 
-@property --hover-color {
+@property --white-color {
   syntax: "<color>";
   inherits: false;
-  initial-value: rgb(84, 35, 37);
+  initial-value: #ffffff;
+}
+
+@property --black-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000000;
+}
+
+@property --blue-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3aa6b9;
 }
 
 body {

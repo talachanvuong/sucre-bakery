@@ -25,23 +25,34 @@ function get_part($phpFile, $cssFile)
 
 <body>
     <?php
-    get_part("./src/page/header.php", "./src/css/header.css");
+    get_part("./src/page/user/header.php", "./src/css/user/header.css");
 
-    $direction = $_GET["direct"] ?? "home";
-    switch ($direction) {
+    $direct = $_GET["direct"] ?? "home";
+    switch ($direct) {
         case 'product':
-            get_part("./src/page/user/product.php", "./src/css/user/product.css");
+            get_part("./src/page/user/product/product.php", "./src/css/user/product/product.css");
             break;
         case 'login':
-            get_part("./src/page/user/login.php", "./src/css/user/login.css");
+            get_part("./src/page/user/account/login.php", "./src/css/user/account/login.css");
+            break;
+        case 'register':
+            get_part("./src/page/user/account/register.php", "./src/css/user/account/register.css");
             break;
         case 'detail':
-            get_part("./src/page/user/detail.php", "./src/css/user/detail.css");
+            get_part("./src/page/user/product/detail.php", "./src/css/user/product/detail.css");
+            break;
+        case 'search':
+            get_part("./src/page/user/product/search.php", "./src/css/user/product/search.css");
+            break;
+        case 'cart':
+            get_part("./src/page/user/pay/cart.php", "./src/css/user/pay/cart.css");
             break;
         case 'home':
             get_part("./src/page/user/home.php", "./src/css/user/home.css");
             break;
     }
+
+    get_part("./src/page/user/footer/footer.php", "./src/css/user/footer/footer.css");
     ?>
 </body>
 
