@@ -2,6 +2,7 @@
 require __DIR__ . "/../product.php";
 require __DIR__ . "/../registerUsers.php";
 require __DIR__ . "/../loginUsers.php";
+require __DIR__ . "/../cart.php";
 class Api
 {
     private $connection;
@@ -18,6 +19,7 @@ class Api
     use Product;
     use Register;
     use Login;
+    use Cart;
 }
 
 require __DIR__ . "/load_image.php";
