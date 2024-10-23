@@ -1,3 +1,13 @@
+<?php
+    require __DIR__ . "/../../../../api/core/core.php";
+       
+    if(isset($_POST['phone']) && isset($_POST['password'])){
+        $result = $api ->login_user();
+        return $result;
+    }
+?>
+
+
 <div class="layout-container">
     <div class="login-container">
         <h2>Đăng Nhập</h2>

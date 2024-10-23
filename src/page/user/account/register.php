@@ -1,3 +1,12 @@
+<?php
+    require __DIR__ . "/../../../../api/core/core.php";
+
+    if(isset($_POST['username']) && isset($_POST['phone'])){
+        $result = $api->register_user();
+        return $result; 
+    }
+?>
+
 <div class="layout-container">
     <div class="register-container">
         <h2>Đăng ký</h2>

@@ -4,37 +4,35 @@ trait Register
     function register_user()
     {
         $errors = [];
-        if (isset($_POST['username'])) {
-            $username = $_POST['username'];
-            $phone = $_POST['phone'];
-            $password = $_POST['password'];
-
-            if (empty($_POST['username'])) {
-                $errors['name'] = 'Name is required';
-            }
-            if (empty($_POST['phone'])) {
-                $errors['phone'] = 'phone is required';
-            } else {
-                if (!preg_match('/^0\d{9}$/', $phone)) {
-                    $errors['phone'] = 'Invalid phone number';
-                }
-            }
-            if (empty($_POST['password'])) {
-                $errors['password'] = 'password is required';
-            } else {
-                if (strlen($_POST['password']) < 5) {
-                    $errors['password'] = 'độ dài không đủ';
-                }
-            }
-            var_dump($errors);
-            if (empty($errors)) {
+        if(isset($_POST['username']) && 
+        isset($_POST['phone']) &&  
+        isset($_POST['password'])){
+     
+         $userName = $_POST['username'];
+         $userPhone = $_POST['phone'];
+         $pass = $_POST['password'];
+     
+         
+         if (empty($userName)) {
+            $errors['name'] = "Name is required";
+         }else if(empty($userPhone)){
+             $errors['phone'] = "Phone is required";
+         }else if(empty($pass)){
+             $errors['password'] = "Password is required";
+         }else {
+     
                 $sql = "INSERT INTO user(us_name, us_number_phone, us_password) 
-                    VALUES ('$username', '$phone', '$password')";
-                $query = mysqli_query($this->connection, $sql);
-                if ($query) {
-                    return "Đăng ký thành công!";
-                }
-            }
-        }
+                        VALUES('$userName','$userPhone','$pass')";
+                $result = $this->connection->query($sql);
+     
+                header("Location:?direct=login");
+                exit;
+         }
+     
+     
+     }else {
+         header("Location:?direct=resgister");
+         exit;
     }
+}
 }
