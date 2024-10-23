@@ -1,31 +1,31 @@
 <?php
-require __DIR__ . "/../../../../api/core/core.php";
+global $api;
 
 if (isset($_POST["action"])) {
     $pd_id = $_POST["pd_id"];
 
     switch ($_POST["action"]) {
-        case "update":
-            $ca_quantity = $_POST["ca_quantity"];
-            $api->update_cart_product_quantity(1, $pd_id, $ca_quantity);
+        case "add":
+            if ($api->exist_cart_product(1, $pd_id)) {
+                $product = $api->get_cart_product(1, $pd_id);
+                $api->update_cart_product(1, $pd_id, $product["ca_quantity"] + 1);
+            } else {
+                $api->add_cart_product(1, $pd_id);
+            }
             break;
 
         case "remove":
             $api->remove_cart_product(1, $pd_id);
             break;
 
-        case "add":
-            if ($api->exist_cart_product(1, $pd_id)) {
-                $product = $api->get_cart_product_by_pd_id(1, $pd_id);
-                $api->update_cart_product_quantity(1, $pd_id, $product["ca_quantity"] + 1);
-            } else {
-                $api->add_cart_product(1, $pd_id);
-            }
+        case "update":
+            $ca_quantity = $_POST["ca_quantity"];
+            $api->update_cart_product(1, $pd_id, $ca_quantity);
             break;
     }
 }
 
-$cart = $api->get_cart_products_by_us_id(1);
+$cart = $api->get_cart_products(1);
 $total = 0;
 ?>
 
@@ -55,7 +55,7 @@ $total = 0;
 
                         <tr>
                             <td><?php echo $product["pd_name"]; ?></td>
-                            <td><?php echo convert_currency($product["pd_price"]); ?></td>
+                            <td><?php convert_currency($product["pd_price"]); ?></td>
                             <td>
                                 <form method="post">
                                     <input type="hidden" name="action" value="update">
@@ -64,7 +64,7 @@ $total = 0;
                                         value="<?php echo $product["ca_quantity"]; ?>">
                                 </form>
                             </td>
-                            <td><?php echo convert_currency($product["pd_price"] * $product["ca_quantity"]); ?></td>
+                            <td><?php convert_currency($product["pd_price"] * $product["ca_quantity"]); ?></td>
                             <td>
                                 <form method="post">
                                     <input type="hidden" name="action" value="remove">

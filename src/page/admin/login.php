@@ -1,26 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="../../css/admin/login.css">
-</head>
-<body>
-    <div class="container">
-        <div>
-            <h2>Admin Login</h2>
-            <form>
-                <label for="login-email">Name</label>
-                <input type="text" id="login-name" name="name" placeholder="Enter your name" required>
+<?php
+global $api;
 
-                <label for="login-password">Password</label>
-                <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+if (isset($_POST["ad_name"]) && isset($_POST["ad_password"])) {
+    $ad_name = $_POST["ad_name"];
+    $ad_password = $_POST["ad_password"];
 
-                <button type="submit" onclick="login()">Login</button>
-            </form>
-        </div>
+    $result = $api->login_admin($ad_name, $ad_password);
+    toast($result['message']);
+    if ($result["success"]) {
+        header("location:?direct=home");
+        exit();
+    }
+}
+?>
+
+<div class="container">
+    <div>
+        <h2>Admin Login</h2>
+        <form method="post">
+            <label for="login-email">Name</label>
+            <input type="text" id="login-name" name="ad_name" placeholder="Enter your name" required>
+
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="ad_password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
     </div>
-    <script src=""></script>
-</body>
-</html>
+</div>

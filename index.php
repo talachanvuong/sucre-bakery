@@ -1,3 +1,11 @@
+<?php
+require __DIR__ . "/./api/core.php";
+require __DIR__ . "/./src/util/require_css.php";
+require __DIR__ . "/./src/util/load_image.php";
+require __DIR__ . "/./src/util/convert_currency.php";
+// require __DIR__ . "/./src/util/check_user.php";
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -9,50 +17,51 @@
     <title>Sucré Bakery</title>
 </head>
 
-<?php
-function get_part($phpFile, $cssFile)
-{
-    require $phpFile;
-    ?>
-    <style>
-        <?php
-        require $cssFile;
-        ?>
-    </style>
-    <?php
-}
-?>
-
 <body>
     <?php
-    get_part("./src/page/user/header.php", "./src/css/user/header.css");
+    require "./src/page/user/header.php";
+    require_css("./src/css/user/header.css");
 
     $direct = $_GET["direct"] ?? "home";
     switch ($direct) {
-        case 'product':
-            get_part("./src/page/user/product/product.php", "./src/css/user/product/product.css");
+        case "product":
+            require "./src/page/user/product/product.php";
+            require_css("./src/css/user/product/product.css");
             break;
-        case 'login':
-            get_part("./src/page/user/account/login.php", "./src/css/user/account/login.css");
+
+        case "login":
+            require "./src/page/user/account/login.php";
+            require_css("./src/css/user/account/login.css");
             break;
-        case 'register':
-            get_part("./src/page/user/account/register.php", "./src/css/user/account/register.css");
+
+        case "register":
+            require "./src/page/user/account/register.php";
+            require_css("./src/css/user/account/register.css");
             break;
-        case 'detail':
-            get_part("./src/page/user/product/detail.php", "./src/css/user/product/detail.css");
+
+        case "detail":
+            require "./src/page/user/product/detail.php";
+            require_css("./src/css/user/product/detail.css");
             break;
-        case 'search':
-            get_part("./src/page/user/product/search.php", "./src/css/user/product/search.css");
+
+        case "search":
+            require "./src/page/user/product/search.php";
+            require_css("./src/css/user/product/search.css");
             break;
-        case 'cart':
-            get_part("./src/page/user/pay/cart.php", "./src/css/user/pay/cart.css");
+
+        case "cart":
+            require "./src/page/user/pay/cart.php";
+            require_css("./src/css/user/pay/cart.css");
             break;
-        case 'home':
-            get_part("./src/page/user/home.php", "./src/css/user/home.css");
+
+        case "home":
+            require "./src/page/user/home.php";
+            require_css("./src/css/user/home.css");
             break;
     }
 
-    get_part("./src/page/user/footer/footer.php", "./src/css/user/footer/footer.css");
+    require "./src/page/user/footer/footer.php";
+    require_css("./src/css/user/footer/footer.css");
     ?>
 </body>
 

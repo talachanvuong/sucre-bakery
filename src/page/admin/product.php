@@ -17,7 +17,7 @@
                 <input id="input" type="text" placeholder="Theo tên sản phẩm...">
             </div>
             <div class="over-view">
-                <p id="view-list"><a href="/index.html">Thống kê tổng quan</a></p>
+                <p id="view-list"><a href="?direct=overview">Thống kê tổng quan</a></p>
             </div>
             <div class="product">
                 <p id="product-list">Sản phẩm</p>

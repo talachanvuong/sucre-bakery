@@ -1,60 +1,41 @@
 <?php
 trait Product
 {
-    function get_products_by_keyword(string $keyword)
+    function get_products_by_keyword($keyword)
     {
-        $sql = "SELECT `pd_id`, `pd_name`, `pd_price`, `pd_description`, `pd_image`
+        $sql = "SELECT *
                 FROM `product`
                 WHERE `pd_name` LIKE '%$keyword%'
                 ORDER BY `pd_id` ASC;";
-
         $result = $this->connection->query($sql);
-
-        $data = [];
-
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
-
-        return $data;
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    function get_product_by_id(int $pd_id)
+    function get_product_by_id($pd_id)
     {
         $sql = "SELECT *
                 FROM `product`
                 WHERE `pd_id` = $pd_id;";
-
         $result = $this->connection->query($sql);
-
         return $result->fetch_assoc();
     }
 
-    function get_products_by_type(int $pdt_id)
+    function get_products_by_type($pdt_id)
     {
-        $sql = "SELECT `pd_id`, `pd_name`, `pd_price`, `pd_description`, `pd_image`
+        $sql = "SELECT *
                 FROM `product`
-                WHERE `pdt_id` = $pdt_id;";
-
+                WHERE `pdt_id` = $pdt_id
+                ORDER BY `pdt_id` ASC;";
         $result = $this->connection->query($sql);
-
-        $data = [];
-
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
-
-        return $data;
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    function get_product_type_by_id(int $pdt_id)
+    function get_product_type_by_id($pdt_id)
     {
         $sql = "SELECT *
                 FROM `product_type`
                 WHERE `pdt_id` = $pdt_id;";
-
         $result = $this->connection->query($sql);
-
         return $result->fetch_assoc();
     }
 
@@ -63,49 +44,52 @@ trait Product
         $sql = "SELECT *
                 FROM `product_type`
                 ORDER BY `pdt_id` ASC;";
-
         $result = $this->connection->query($sql);
-
-        $data = [];
-
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
-
-        return $data;
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    function add_product(string $pd_name, int $pd_price, string $pd_description, int $pdt_id, string $pd_image)
+    function add_product($pd_name, $pd_price, $pd_description, $pdt_id, $pd_image)
     {
         $pd_image = "0x" . bin2hex(file_get_contents($pd_image));
 
         // pd_image is image so doesn't need to put into ''
         $sql = "INSERT INTO `product` (`pd_name`, `pd_price`, `pd_description`, `pdt_id`, `pd_image`)
-            VALUES
-            ('$pd_name', $pd_price, '$pd_description', $pdt_id, $pd_image);";
+                VALUES ('$pd_name', $pd_price, '$pd_description', $pdt_id, $pd_image);";
 
         try {
             $this->connection->query($sql);
-            return "Đã thêm thành công!";
+            return [
+                "success" => true,
+                "message" => "Đã thêm thành công!"
+            ];
         } catch (\Throwable $th) {
-            return $th->getMessage();
+            return [
+                "success" => false,
+                "message" => $th->getMessage()
+            ];
         }
     }
 
-    function remove_product(int $pd_id)
+    function remove_product($pd_id)
     {
         $sql = "DELETE FROM `product`
-            WHERE `pd_id` = $pd_id;";
+                WHERE `pd_id` = $pd_id;";
 
         try {
             $this->connection->query($sql);
-            return "Đã xoá thành công!";
+            return [
+                "success" => true,
+                "message" => "Đã xoá thành công!"
+            ];
         } catch (\Throwable $th) {
-            return $th->getMessage();
+            return [
+                "success" => false,
+                "message" => $th->getMessage()
+            ];
         }
     }
 
-    function edit_product(int $pd_id, array $product)
+    function edit_product($pd_id, $product)
     {
         $update = "";
 
@@ -139,21 +123,30 @@ trait Product
         }
 
         // Avoid spamming button when nothing changes
-        if ($update == "") {
-            return "Không có gì thay đổi!";
+        if ($update === "") {
+            return [
+                "success" => true,
+                "message" => "Không có gì cập nhật!"
+            ];
         }
 
         $update = rtrim($update, ',');
 
         $sql = "UPDATE `product`
-            SET $update
-            WHERE `pd_id` = $pd_id;";
+                SET $update
+                WHERE `pd_id` = $pd_id;";
 
         try {
             $this->connection->query($sql);
-            return "Đã thay đổi thành công!";
+            return [
+                "success" => true,
+                "message" => "Đã cập nhật thành công!"
+            ];
         } catch (\Throwable $th) {
-            return $th->getMessage();
+            return [
+                "success" => false,
+                "message" => $th->getMessage()
+            ];
         }
     }
 }

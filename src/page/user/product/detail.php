@@ -1,9 +1,8 @@
 <?php
-require __DIR__ . "/../../../../api/core/core.php";
-
+global $api;
 $pd_id = $_GET["pd_id"];
 $product = $api->get_product_by_id($pd_id);
-$productType = $api->get_product_type_by_id((int) $product["pdt_id"]);
+$productType = $api->get_product_type_by_id($product["pdt_id"]);
 ?>
 
 <div class="layout-container">
@@ -13,7 +12,7 @@ $productType = $api->get_product_type_by_id((int) $product["pdt_id"]);
         </div>
         <div class="menu-main">
             <p class="product-name"><?php echo $product["pd_name"]; ?></p>
-            <p class="product-price"><?php echo convert_currency($product["pd_price"]); ?></p>
+            <p class="product-price"><?php convert_currency($product["pd_price"]); ?></p>
             <hr class="seperate">
             <p class="title">Loại sản phẩm:</p>
             <p class="paragraph"><?php echo $productType["pdt_name"]; ?></p>
@@ -23,7 +22,7 @@ $productType = $api->get_product_type_by_id((int) $product["pdt_id"]);
 
             <form class="form" action="?direct=cart" method="post">
                 <input type="hidden" name="action" value="add">
-                <input type="hidden" name="pd_id" value="<?php echo $product["pd_id"] ?>">
+                <input type="hidden" name="pd_id" value="<?php echo $product["pd_id"]; ?>">
                 <input class="add-to-cart" type="submit" value="Thêm vào giỏ hàng 🛒">
             </form>
         </div>

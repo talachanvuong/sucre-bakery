@@ -25,7 +25,7 @@
                 </ul>
             </div>
             <div class="product">
-                <p id="product-list"><a href="/src/product.html">Sản phẩm</a></p>
+                <p id="product-list"><a href="?direct=product">Sản phẩm</a></p>
             </div>
         </div>
         <div class="content">

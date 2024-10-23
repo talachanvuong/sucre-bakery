@@ -1,8 +1,6 @@
 <?php
-require __DIR__ . "/../../../../api/core/core.php";
-
-$defaultProductType = 1;
-$pdt_id = $_GET["pdt_id"] ?? $defaultProductType;
+global $api;
+$pdt_id = $_GET["pdt_id"] ?? 1;
 $products = $api->get_products_by_type($pdt_id);
 $productTypes = $api->get_product_types();
 $currentProductType = $api->get_product_type_by_id($pdt_id);
@@ -30,9 +28,9 @@ $currentProductType = $api->get_product_type_by_id($pdt_id);
                     foreach ($products as $product) { ?>
                         <div class="product-item">
                             <img class="product-image" src=<?php load_image($product["pd_image"]); ?>>
-                            <p class="product-name" title="<?php echo $product["pd_name"] ?>"><?php echo $product["pd_name"] ?>
+                            <p class="product-name" title="<?php echo $product["pd_name"]; ?>"><?php echo $product["pd_name"]; ?>
                             </p>
-                            <p class="product-price"><?php echo convert_currency($product["pd_price"]); ?></p>
+                            <p class="product-price"><?php convert_currency($product["pd_price"]); ?></p>
                             <a class="product-button" href="?direct=detail&pd_id=<?php echo $product["pd_id"]; ?>">Xem
                                 sản phẩm</a>
                         </div>
