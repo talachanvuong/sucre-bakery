@@ -3,7 +3,7 @@ require __DIR__ . "/./api/core.php";
 require __DIR__ . "/./src/util/require_css.php";
 require __DIR__ . "/./src/util/load_image.php";
 require __DIR__ . "/./src/util/convert_currency.php";
-// require __DIR__ . "/./src/util/check_user.php";
+require __DIR__ . "/./src/util/check_user.php";
 ?>
 
 <!DOCTYPE html>

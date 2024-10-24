@@ -21,7 +21,7 @@ require __DIR__ . "/./src/util/toast.php";
 <body>
     <?php
     session_start();
-    
+
     $direct = $_GET["direct"] ?? "home";
     switch ($direct) {
         case "product":
@@ -36,6 +36,12 @@ require __DIR__ . "/./src/util/toast.php";
             require_css("./src/css/admin/login.css");
             break;
 
+        case "logout":
+            $api->logout_admin();
+            set_toast_message("Đăng xuất thành công!");
+            header("location:?direct=login");
+            exit();
+            
         case "home":
             authorize();
             require "./src/page/admin/home.php";

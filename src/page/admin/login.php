@@ -1,13 +1,16 @@
 <?php
 global $api;
 
+toast_session();
+
 if (isset($_POST["ad_name"]) && isset($_POST["ad_password"])) {
     $ad_name = $_POST["ad_name"];
     $ad_password = $_POST["ad_password"];
 
     $result = $api->login_admin($ad_name, $ad_password);
-    toast($result['message']);
+    toast($result["message"]);
     if ($result["success"]) {
+        set_toast_message($result["message"]);
         header("location:?direct=home");
         exit();
     }

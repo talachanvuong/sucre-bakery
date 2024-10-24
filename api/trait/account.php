@@ -149,4 +149,12 @@ trait Account
     {
         return $_SESSION["us_info"] ?? null;
     }
+
+    function logout_user() {
+        unset($_SESSION["us_info"]);
+    }
+
+    function logout_admin() {
+        unset($_SESSION["ad_info"]);
+    }
 }

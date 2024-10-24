@@ -1,6 +1,16 @@
 <?php
-if (!isset($_SESSION["us_info"])) { ?>
-    <form method="get" onload="this.form.submit()">
-        <input type="hidden" name="direct" value="login">
-    </form>
-<?php } ?>
+function authorize()
+{
+    if (!isset($_SESSION["us_info"])) {
+        header("location:?direct=login");
+        exit();
+    }
+}
+
+function block_login()
+{
+    if (isset($_SESSION["us_info"])) {
+        header("location:?direct=home");
+        exit();
+    }
+}
