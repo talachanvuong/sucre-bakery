@@ -1,7 +1,5 @@
 <?php
 require __DIR__ . "/./trait/product.php";
-require __DIR__ . "/./trait/registerUsers.php";
-require __DIR__ . "/./trait/loginUsers.php";
 require __DIR__ . "/./trait/cart.php";
 require __DIR__ . "/./trait/account.php";
 class Api
@@ -18,8 +16,6 @@ class Api
     }
 
     use Product;
-    use Register;
-    use Login;
     use Cart;
     use Account;
 }
