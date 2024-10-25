@@ -40,6 +40,7 @@ function toast($message)
             background-color: var(--white-color);
             border-bottom-left-radius: 16px;
             border-bottom-right-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             animation: move-toast-panel-in 0.4s ease forwards;
         }
 

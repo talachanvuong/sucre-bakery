@@ -4,6 +4,7 @@ require __DIR__ . "/./src/util/require_css.php";
 require __DIR__ . "/./src/util/load_image.php";
 require __DIR__ . "/./src/util/convert_currency.php";
 require __DIR__ . "/./src/util/check_user.php";
+require __DIR__ . "/./src/util/toast.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,8 @@ require __DIR__ . "/./src/util/check_user.php";
 
 <body>
     <?php
+    session_start();
+
     require "./src/page/user/header.php";
     require_css("./src/css/user/header.css");
 
@@ -33,6 +36,12 @@ require __DIR__ . "/./src/util/check_user.php";
             require "./src/page/user/account/login.php";
             require_css("./src/css/user/account/login.css");
             break;
+
+        case "logout":
+            $api->logout_user();
+            set_toast_message("Đăng xuất thành công!");
+            header("location:?direct=login");
+            exit();
 
         case "register":
             require "./src/page/user/account/register.php";

@@ -23,6 +23,7 @@ if (isset($_POST["action"])) {
             $api->update_cart_product(1, $pd_id, $ca_quantity);
             break;
     }
+    header("refresh:0");
 }
 
 $cart = $api->get_cart_products(1);
@@ -40,6 +41,7 @@ $total = 0;
             <table class="cart-table">
                 <thead>
                     <tr>
+                        <th>Hình ảnh</th>
                         <th>Tên sản phẩm</th>
                         <th>Giá</th>
                         <th>Số lượng</th>
@@ -54,13 +56,14 @@ $total = 0;
                         $total += $product["pd_price"] * $product["ca_quantity"]; ?>
 
                         <tr>
+                            <td><img class="product-image" src=<?php load_image($product["pd_image"]); ?>></td>
                             <td><?php echo $product["pd_name"]; ?></td>
                             <td><?php convert_currency($product["pd_price"]); ?></td>
                             <td>
                                 <form method="post">
                                     <input type="hidden" name="action" value="update">
                                     <input type="hidden" name="pd_id" value="<?php echo $product["pd_id"]; ?>">
-                                    <input type="number" min="1" max="10" onchange="this.form.submit()" name="ca_quantity"
+                                    <input type="number" min="1" onchange="this.form.submit()" name="ca_quantity"
                                         value="<?php echo $product["ca_quantity"]; ?>">
                                 </form>
                             </td>
