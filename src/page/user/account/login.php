@@ -15,6 +15,9 @@ if (isset($_POST["phone"]) && isset($_POST["password"])) {
         exit();
     }
 }
+authorize();
+block_login();
+
 ?>
 
 <div class="layout-container">
