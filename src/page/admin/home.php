@@ -10,8 +10,90 @@ toast_session();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sucre Bakery</title>
     <link rel="stylesheet" href="../../css/admin/overview/content.css">
-    <link rel="stylesheet" href="../../css/admin/overview/menu-left.css">
+    <link rel="stylesheet" href="../../css/admin/overview/me">
 </head>
+<style>
+    body {
+        background-color: rgb(223, 223, 223);
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .menu-left {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        height: 700px;
+        width: 250px;
+    }
+
+    #label {
+        background-color: aqua;
+        margin: 0px;
+        padding: 5px 0px 5px 0px;
+    }
+
+    #input {
+        margin: 5px 20px 5px 20px;
+        padding: 5px 0px 5px 0px;
+        height: 20px;
+        width: 200px;
+
+    }
+
+    .over-view p {
+        background-color: aqua;
+        margin: 0px;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .over-view ul {
+        display: block;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+    }
+
+    #list-items li {
+        padding: 5px;
+    }
+
+    #list-items li:hover {
+        background-color: rgb(220, 229, 237);
+    }
+
+    .product {
+        padding: 8px 0 8px 0;
+    }
+
+    .product p {
+        background-color: aqua;
+        margin: 0px;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .product ul {
+        display: block;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+    }
+
+    #product-items li {
+        padding: 5px;
+    }
+
+    #product-items li:hover {
+        background-color: rgb(220, 229, 237);
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
 
 <body>
     <div class="container">
