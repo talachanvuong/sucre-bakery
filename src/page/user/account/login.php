@@ -1,3 +1,22 @@
+<?php
+global $api;
+
+toast_session();
+
+if (isset($_POST["phone"]) && isset($_POST["password"])) {
+    $us_number_phone = $_POST["phone"];
+    $us_password = $_POST["password"];
+
+    $result = $api->login_user($us_number_phone, $us_password);
+    toast($result["message"]);
+    if ($result["success"]) {
+        set_toast_message($result["message"]);
+        header("location:?direct=home");
+        exit();
+    }
+}
+?>
+
 <div class="layout-container">
     <div class="login-container">
         <h2>Đăng Nhập</h2>
@@ -5,7 +24,7 @@
             <div class="input-group">
                 <label for="phone">Số điện thoại:</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10"
-                    placeholder="Nhập số điện thoại của bạn" required>
+                    placeholder="Nhập số điện thoại" required>
             </div>
             <div class="input-group">
                 <label for="password">Mật khẩu:</label>

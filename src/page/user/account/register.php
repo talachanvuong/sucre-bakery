@@ -1,3 +1,23 @@
+<?php
+global $api;
+
+toast_session();
+
+if (isset($_POST["username"]) && isset($_POST["phone"]) && isset($_POST["password"])) {
+    $us_name = $_POST["username"];
+    $us_number_phone = $_POST["phone"];
+    $us_password = $_POST["password"];
+
+    $result = $api->register_user($us_name, $us_number_phone, $us_password);
+    toast($result["message"]);
+    if ($result["success"]) {
+        set_toast_message($result["message"]);
+        header("location:?direct=login");
+        exit();
+    }
+}
+?>
+
 <div class="layout-container">
     <div class="register-container">
         <h2>Đăng ký</h2>
@@ -9,7 +29,7 @@
             <div class="input-group">
                 <label for="phone">Số điện thoại:</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10"
-                    placeholder="Nhập số điện thoại của bạn" required>
+                    placeholder="Nhập số điện thoại" required>
             </div>
             <div class="input-group">
                 <label for="password">Mật khẩu:</label>
