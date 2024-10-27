@@ -100,7 +100,6 @@ $products = get_products($connection);
         body {
             background-color: rgb(223, 223, 223);
         }
-
         .container {
             display: grid;
             grid-template-areas: 
@@ -109,24 +108,20 @@ $products = get_products($connection);
             "Menu Edit Content";
             grid-template-columns: 1fr 1fr 4fr;
         }
-
         .content {
             grid-area: Content;
             margin-left: 20px;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
         }
-
         th,
         td {
             border: 1px solid #000;
             padding: 8px;
             text-align: center;
         }
-
         .menu-left {
             grid-area: Menu;
             display: flex;
@@ -135,76 +130,61 @@ $products = get_products($connection);
             height: auto;
             width: 250px;
         }
-
         #label {
             background-color: aqua;
             margin: 0px;
             padding: 5px 0px 5px 0px;
         }
-
         #input {
             margin: 5px 20px 5px 20px;
             padding: 5px 0px 5px 0px;
             height: 20px;
             width: 200px;
-
         }
-
         .over-view p {
             background-color: aqua;
             margin: 0px;
             padding: 5px 0px 5px 0px;
         }
-
         .over-view ul {
             display: block;
             padding: 0px;
             margin: 0px;
             text-align: center;
         }
-
         #list-items li {
             padding: 5px;
         }
-
         #list-items li:hover {
             background-color: rgb(220, 229, 237);
         }
-
         .product {
             padding: 8px 0 8px 0;
         }
-
         .product p {
             background-color: aqua;
             margin: 0px;
             padding: 5px 0px 5px 0px;
         }
-
         .product ul {
             display: block;
             padding: 0px;
             margin: 0px;
             text-align: center;
         }
-
         #product-items li {
             padding: 5px;
         }
-
         #product-items li:hover {
             background-color: rgb(220, 229, 237);
         }
-
         .edit-product {
             grid-area: Edit;
         }
-
         a {
             text-decoration: none;
             color: black;
         }
-
         h1 {
             background-color: red;
             font-size: larger;
@@ -216,27 +196,25 @@ $products = get_products($connection);
 <body>
     <div class="container">
         <div class="menu-left">
-            <div class="menu-left">
-                <div class="search-input">
-                    <p id="label">Tìm kiếm</p>
-                    <input id="input" type="text" placeholder="Theo tên sản phẩm...">
-                </div>
-                <div class="over-view">
-                    <p id="view-list"><a href="?direct=home">Thống kê tổng quan</a></p>
-                </div>
-                <div class="product">
-                    <p id="product-list">Sản phẩm</p>
-                    <ul style="list-style: none;" id="product-items">
-                        <li><a href="#">Bánh ngọt</a></li>
-                        <li><a href="#">Bánh bông lan</a></li>
-                        <li><a href="#">Bánh trung thu</a></li>
-                        <li><a href="#">Bánh kem</a></li>
-                    </ul>
-                </div>
+            <div class="search-input">
+                <p id="label">Tìm kiếm</p>
+                <input id="input" type="text" placeholder="Theo tên sản phẩm...">
+            </div>
+            <div class="over-view">
+                <p id="view-list"><a href="?direct=home">Thống kê tổng quan</a></p>
+            </div>
+            <div class="product">
+                <p id="product-list">Sản phẩm</p>
+                <ul style="list-style: none;" id="product-items">
+                    <li><a href="#">Bánh ngọt</a></li>
+                    <li><a href="#">Bánh bông lan</a></li>
+                    <li><a href="#">Bánh trung thu</a></li>
+                    <li><a href="#">Bánh kem</a></li>
+                </ul>
             </div>
         </div>
         <form method="POST" enctype="multipart/form-data" class="edit-product">
-            <h1>Thao tác sản phẩm/h1>
+            <h1>Quản lý Sản phẩm</h1>
             <input type="hidden" name="productId" value="<?= htmlspecialchars($product['pd_id'] ?? '') ?>">
             <div><label>Tên sản phẩm:</label><input type="text" name="productName" value="<?= htmlspecialchars($product['pd_name'] ?? '') ?>" required></div>
             <div><label>Giá:</label><input type="number" name="productPrice" value="<?= htmlspecialchars($product['pd_price'] ?? '') ?>" required></div>
