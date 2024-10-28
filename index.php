@@ -33,19 +33,28 @@ require __DIR__ . "/./src/util/toast.php";
             break;
 
         case "login":
+            block_login();
             require "./src/page/user/account/login.php";
             require_css("./src/css/user/account/login.css");
             break;
 
         case "logout":
+            authorize();
             $api->logout_user();
             set_toast_message("Đăng xuất thành công!");
             header("location:?direct=login");
             exit();
 
         case "register":
+            block_login();
             require "./src/page/user/account/register.php";
             require_css("./src/css/user/account/register.css");
+            break;
+
+        case "modify":
+            authorize();
+            require "./src/page/user/account/modify.php";
+            require_css("./src/css/user/account/modify.css");
             break;
 
         case "detail":

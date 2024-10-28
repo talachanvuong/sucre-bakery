@@ -69,3 +69,28 @@ header {
     padding-left: 5px;
     padding-right: 5px;
 }
+
+.header-name {
+    max-width: 250px;
+    font-family: "Roboto";
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--bisque-color);
+    font-weight: bold;
+
+    border-radius: 9999px;
+    padding: 5px 15px;
+    transition: 0.6s;
+
+    text-decoration: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.header-name:hover {
+    background-color: var(--bisque-color);
+    color: var(--brown-color);
+}

@@ -8,16 +8,15 @@ if (isset($_POST["phone"]) && isset($_POST["password"])) {
     $us_password = $_POST["password"];
 
     $result = $api->login_user($us_number_phone, $us_password);
-    toast($result["message"]);
+
     if ($result["success"]) {
         set_toast_message($result["message"]);
         header("location:?direct=home");
         exit();
+    } else {
+        toast($result["message"]);
     }
 }
-authorize();
-block_login();
-
 ?>
 
 <div class="layout-container">
@@ -29,11 +28,15 @@ block_login();
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10"
                     placeholder="Nhập số điện thoại" required>
             </div>
+
             <div class="input-group">
                 <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" minlength="3"
+                    maxlength="50" required>
             </div>
+
             <input type="submit" class="btn" value="Đăng nhập">
+
             <div class="register">
                 <p>Chưa có tài khoản? <a href="?direct=register">Đăng ký ngay.</a></p>
             </div>
