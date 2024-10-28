@@ -37,6 +37,7 @@ require __DIR__ . "/./src/util/toast.php";
             break;
 
         case "logout":
+            authorize();
             $api->logout_admin();
             set_toast_message("Đăng xuất thành công!");
             header("location:?direct=login");
