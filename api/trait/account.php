@@ -150,6 +150,11 @@ trait Account
         return $_SESSION["us_info"] ?? null;
     }
 
+    function get_admin_info()
+    {
+        return $_SESSION["ad_info"] ?? null;
+    }
+
     function logout_user() {
         unset($_SESSION["us_info"]);
     }

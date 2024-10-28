@@ -1,0 +1,39 @@
+.menu-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  background-color: var(--white-color);
+}
+
+.menu-left .tab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-left .title {
+  color: var(--black-color);
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: center;
+  background-color: cyan;
+}
+
+.menu-left .children {
+  color: var(--black-color);
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu-left .children:hover {
+  background-color: steelblue;
+}

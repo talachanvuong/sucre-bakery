@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Roboto";
-  src: url(../../public/font/Roboto.ttf);
+  font-family: 'Roboto';
+  src: url(./public/font/Roboto.ttf);
 }
 
 @property --brown-color {
@@ -45,4 +45,8 @@ body {
 
 html::-webkit-scrollbar {
   display: none;
+}
+
+textarea {
+  resize: none;
 }

@@ -1,6 +1,15 @@
 <?php
 trait Product
 {
+    function get_products()
+    {
+        $sql = "SELECT *
+                FROM `product`
+                ORDER BY `pd_id` ASC;";
+        $result = $this->connection->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     function get_products_by_keyword($keyword)
     {
         $sql = "SELECT *

@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+}
+
+#label {
+  background-color: aqua;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+}
+
+#input {
+  margin: 5px 20px 5px 20px;
+  padding: 5px 0px 5px 0px;
+  height: 20px;
+  width: 200px;
+}
+
+.over-view p {
+  background-color: aqua;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+}
+
+.over-view ul {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+#list-items li {
+  padding: 5px;
+}
+
+#list-items li:hover {
+  background-color: rgb(220, 229, 237);
+}
+
+.product {
+  padding: 8px 0 8px 0;
+}
+
+.product p {
+  background-color: aqua;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+}
+
+.product ul {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+#product-items li {
+  padding: 5px;
+}
+
+#product-items li:hover {
+  background-color: rgb(220, 229, 237);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: auto;
+  margin-left: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse; 
+  border: 2px solid #333; 
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #333;
+  text-align: left;
+}
+th {
+  background-color: #f4f4f4; 
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.waiting { background-color: #f7d7d7; }
+.accepted { background-color: #ffdd7e; }
+.in-progress { background-color: #fffa7e; }
+.shipping { background-color: #9be8a7; }
+.delivered { background-color: #a7d9f8; }
+.cancelled { background-color: #f8a7a7; }

@@ -1,0 +1,110 @@
+.menu-main {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-main .title {
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: center;
+  background-color: cyan;
+}
+
+.menu-main .table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white-color);
+}
+
+.menu-main .table th {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f4f4f4;
+
+  border: 1px solid #000;
+  padding: 8px;
+  align-content: center;
+}
+
+.menu-main .table td {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+
+  border: 1px solid #000;
+  padding: 8px;
+  align-content: center;
+}
+
+.menu-main .table .col-1 {
+  width: 15%;
+}
+
+.menu-main .table .col-2 {
+  width: 15%;
+}
+
+.menu-main .table .col-3 {
+  width: 5%;
+  text-align: center;
+}
+
+.menu-main .table .col-4 {
+  width: 35%;
+  text-align: justify;
+}
+
+.menu-main .table .col-5 {
+  width: 15%;
+  text-align: center;
+}
+
+.menu-main .table .col-6 {
+  width: 15%;
+  text-align: center;
+}
+
+.menu-main .table .edit-button {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.menu-main .table .edit-button :hover {
+  background-color: green;
+}
+
+.menu-main .table .delete-button {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  background-color: red;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.menu-main .table .delete-button:hover {
+  background-color: #AF1740;
+}
+
+.menu-main .table .product-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
