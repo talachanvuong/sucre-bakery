@@ -1,15 +1,14 @@
 <?php
 global $api;
 
+toast_session();
+
 $us_info = $api->get_user_info();
-$us_id = 0;
-if (isset($us_info)) {
-    $us_id = $us_info["us_id"];
-}
+$us_id = $us_info["us_id"];
 
 if (isset($_POST["action"])) {
     $pd_id = $_POST["pd_id"];
-    
+
     switch ($_POST["action"]) {
         case "add":
             if ($api->exist_cart_product($us_id, $pd_id)) {
@@ -29,10 +28,11 @@ if (isset($_POST["action"])) {
             $api->update_cart_product($us_id, $pd_id, $ca_quantity);
             break;
     }
-    header("refresh:0");
+    header("location:?direct=cart");
+    exit();
 }
 
-$cart = $api->get_cart_products($us_id) ?? [];
+$cart = $api->get_cart_products($us_id);
 $total = 0;
 ?>
 
@@ -99,9 +99,8 @@ $total = 0;
             </div>
         </div>
 
-        <form class="checkout-form" method="post">
-            <input type="hidden" name="direct" value="checkout">
-            <input class="checkout-btn" type="submit" value="Thanh toán">
-        </form>
+        <div class="payout-direct">
+            <a class="payout-btn" href="?direct=payout">Thanh toán</a>
+        </div>
     <?php } ?>
 </div>

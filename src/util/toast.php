@@ -17,7 +17,7 @@ function unset_toast_message()
 function toast_session()
 {
     $toast_message = get_toast_message();
-    if (isset($toast_message)) {
+    if ($toast_message) {
         toast($toast_message);
         unset_toast_message();
     }
@@ -30,10 +30,10 @@ function toast($message)
         <p class="toast-message"><?php echo $message; ?></p>
     </div>
 
-    <style>
+    <style class="toast-style">
         .toast-panel {
             width: 25%;
-            position: absolute;
+            position: fixed;
             bottom: 20px;
             left: -25%;
 
@@ -98,13 +98,17 @@ function toast($message)
         }
     </style>
 
-    <script>
+    <script class="toast-script">
         setTimeout(() => {
             const toastPanel = document.getElementsByClassName("toast-panel")[0];
+            const toastStyle = document.getElementsByClassName("toast-style")[0];
+            const toastScript = document.getElementsByClassName("toast-script")[0];
             toastPanel.style.animation = "move-toast-panel-out 0.4s ease forwards";
 
             setTimeout(() => {
                 toastPanel.remove();
+                toastStyle.remove();
+                toastScript.remove();
             }, 400);
         }, 4000);
     </script>

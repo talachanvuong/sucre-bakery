@@ -65,4 +65,11 @@ trait Cart
         $result = $this->connection->query($sql)->fetch_assoc();
         return $result["ca_total_quantity"];
     }
+
+    function clear_cart($us_id)
+    {
+        $sql = "DELETE FROM `cart`
+                WHERE `us_id` = $us_id;";
+        $this->connection->query($sql);
+    }
 }

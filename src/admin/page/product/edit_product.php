@@ -5,16 +5,37 @@ $pd_id = $_POST["productId"];
 $product = $api->get_product_by_id($pd_id);
 $productTypes = $api->get_product_types();
 
-if (isset($_POST['editProduct'])) {
-    $newProduct = [
-        "pd_name" => $_POST['productName'] === $product["pd_name"] ? null : $_POST['productName'],
-        "pd_price" => $_POST['productPrice'] === $product["pd_price"] ? null : $_POST['productPrice'],
-        "pd_description" => $_POST['productDescription'] === $product["pd_description"] ? null : $_POST['productDescription'],
-        "pdt_id" => $_POST['productType'] === $product["pdt_id"] ? null : $_POST['productType'],
-        "pd_image" => $_FILES['productImage']['tmp_name'] ?? null
-    ];
+$pd_name = $product["pd_name"];
+$pd_price = $product["pd_price"];
+$pd_description = $product["pd_description"];
+$pdt_id = $product["pdt_id"];
+$pd_image = $product["pd_image"];
 
-    $result = $api->edit_product($pd_id, $newProduct);
+if (isset($_POST['editProduct'])) {
+    $new_name = $_POST["productName"];
+    $new_price = $_POST["productPrice"];
+    $new_description = $_POST["productDescription"];
+    $new_type = $_POST["productType"];
+    $new_image = $_FILES["productImage"]["tmp_name"];
+
+    $new_product = [];
+
+    if ($new_name !== $pd_name) {
+        $new_product["pd_name"] = $new_name;
+    }
+
+    if ($new_description !== $pd_description) {
+        $new_product["pd_description"] = $new_description;
+    }
+
+    if ($new_type !== $pdt_id) {
+        $new_product["pdt_id"] = $new_type;
+    }
+
+    // Need to handle this, show old image, if new image !== old image update
+    // $new_product["pd_image"] = $new_image;
+
+    $result = $api->edit_product($pd_id, $new_product);
 
     if ($result["success"]) {
         set_toast_message($result["message"]);

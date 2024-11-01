@@ -3,7 +3,7 @@ require __DIR__ . "/./api/core.php";
 require __DIR__ . "/./src/util/require_css.php";
 require __DIR__ . "/./src/util/load_image.php";
 require __DIR__ . "/./src/util/convert_currency.php";
-require __DIR__ . "/./src/util/check_user.php";
+require __DIR__ . "/./src/util/checker.php";
 require __DIR__ . "/./src/util/toast.php";
 
 session_start();
@@ -33,26 +33,26 @@ session_start();
             break;
 
         case "login":
-            block_login();
+            block_login_user();
             require "./src/user/page/account/login.php";
             require_css("./src/user/css/account/login.css");
             break;
 
         case "logout":
-            authorize();
+            authorize_user();
             $api->logout_user();
             set_toast_message("Đăng xuất thành công!");
             header("location:?direct=login");
             exit();
 
         case "register":
-            block_login();
+            block_login_user();
             require "./src/user/page/account/register.php";
             require_css("./src/user/css/account/register.css");
             break;
 
         case "modify":
-            authorize();
+            authorize_user();
             require "./src/user/page/account/modify.php";
             require_css("./src/user/css/account/modify.css");
             break;

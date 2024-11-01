@@ -131,33 +131,15 @@ trait Product
     {
         $update = "";
 
-        $pd_name = $product["pd_name"] ?? null;
-        $pd_price = $product["pd_price"] ?? null;
-        $pd_description = $product["pd_description"] ?? null;
-        $pdt_id = $product["pdt_id"] ?? null;
-        $pd_image = $product["pd_image"] ?? null;
+        foreach ($product as $key => $value) {
+            if ($key === "pd_image") {
+                $pd_image = "0x" . bin2hex(file_get_contents($value));
 
-        if ($pd_name) {
-            $update .= "`pd_name` = '$pd_name',";
-        }
-
-        if ($pd_price) {
-            $update .= "`pd_price` = $pd_price,";
-        }
-
-        if ($pd_description) {
-            $update .= "`pd_description` = '$pd_description',";
-        }
-
-        if ($pdt_id) {
-            $update .= "`pdt_id` = $pdt_id,";
-        }
-
-        if ($pd_image) {
-            $pd_image = "0x" . bin2hex(file_get_contents($pd_image));
-
-            // pd_image is image so doesn't need to put into ''
-            $update .= "`pd_image` = $pd_image,";
+                // pd_image is image so doesn't need to put into ''
+                $update .= "`$key` = $pd_image,";
+            } else {
+                $update .= "`$key` = '$value',";
+            }
         }
 
         // Avoid spamming button when nothing changes

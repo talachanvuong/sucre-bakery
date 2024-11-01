@@ -1,5 +1,10 @@
 <?php
 global $api;
+
+$us_info = $api->get_user_info();
+$link_class = $us_info ? "header-name" : "header-option";
+$href = $us_info ? "?direct=modify" : "?direct=login";
+$link_text = $us_info ? $us_info["us_name"] : "Đăng nhập";
 ?>
 
 <header>
@@ -10,24 +15,21 @@ global $api;
 
         <a class="header-option" href="?direct=product">Sản phẩm</a>
 
+        <a class="<?= $link_class ?>" href="<?= $href ?>">
+            <?= $link_text ?>
+        </a>
+
         <?php
-        $us_info = $api->get_user_info();
-        if (isset($us_info)) { ?>
-            <a class="header-name" href="?direct=modify"><?php echo $us_info["us_name"]; ?></a>
-        <?php } else { ?>
-            <a class="header-option" href="?direct=login">Đăng nhập</a>
-        <?php } ?>
+        if ($us_info) { ?>
+            <a class="header-cart" href="?direct=cart">
+                <p>Giỏ hàng</p>
 
-        <a class="header-cart" href="?direct=cart">
-            <p>Giỏ hàng</p>
-
-            <?php
-            if (isset($us_info)) {
+                <?php
                 $total_quantity = $api->get_cart_total_quantity($us_info["us_id"]);
                 if ($total_quantity > 0) { ?>
-                    <div class="header-cart-total"><?php echo $total_quantity; ?></div>
-                <?php }
-            } ?>
-        </a>
+                    <div class="header-cart-total"><?= $total_quantity ?></div>
+                <?php } ?>
+            </a>
+        <?php } ?>
     </div>
 </header>

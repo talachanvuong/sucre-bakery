@@ -1,67 +1,94 @@
-<div class="container">
-    <h2>Thông Tin Thanh Toán</h2>
+<?php
+global $api;
 
-    <form action="submit_payment.php" method="POST">
-        <!-- Thông tin giao hàng -->
-        <label class="radio-group">
-            <input type="radio" name="shipping_info" value="default" checked> Sử dụng thông tin mặc định
-        </label>
-        <label class="radio-group">
-            <input type="radio" name="shipping_info" value="new"> Điền thông tin mới
-        </label>
+toast_session();
 
-        <label for="full-name">Họ và tên:</label>
-        <input type="text" id="full-name" name="full_name" required placeholder="Bắt buộc">
+$us_info = $api->get_user_info();
+$us_id = $us_info["us_id"];
 
-        <label for="address">Địa chỉ:</label>
-        <input type="text" id="address" name="address" required placeholder="Bắt buộc">
+$cart = $api->get_cart_products($us_id);
+$total = 0;
+?>
 
-        <label for="phone">Số điện thoại:</label>
-        <input type="tel" id="phone" name="phone" required placeholder="Bắt buộc">
+<div class="layout-container">
+    <div class="payout-container">
+        <p class="title">Thông tin thanh toán</p>
 
-        <label for="delivery-date">Chọn ngày giao:</label>
-        <input type="date" id="delivery-date" name="delivery_date" required>
+        <form action="" method="post">
 
-        <!-- tip fỏ produce -->
-        <div class="tip-section">
-            <label for="tip">Tip (VNĐ):</label>
-            <input type="text" id="tip" name="tip" placeholder="Không bắt buộc">
-        </div>
+            <div class="horizontal-container">
+                <div class="choice">
+                    <input type="radio" name="shipping_info" checked>
+                    <p>Sử dụng thông tin mặc định</p>
+                </div>
 
-        <!-- Discount -->
-        <div class="discount-section">
-            <label for="discount">Chọn mức giảm giá:</label>
-            <select id="discount" name="discount">
-                <option value="0">Không áp dụng giảm giá</option>
-                <option value="10">10%</option>
-                <option value="20">20%</option>
-            </select>
-        </div>
+                <div class="choice">
+                    <input type="radio" name="shipping_info">
+                    <p>Điền mới</p>
+                </div>
+            </div>
 
-        <!-- List of produce -->
-        <h3>Danh sách sản phẩm</h3>
-        <div class="product-list">
-            <table>
+            <div class="input-group">
+                <p>Họ và tên:</p>
+                <input type="text" name="name" placeholder="Nhập tên" minlength="3" maxlength="50">
+            </div>
+
+            <div class="input-group">
+                <p>Địa chỉ:</p>
+                <input type="text" name="address" placeholder="Nhập địa chỉ" minlength="3">
+            </div>
+
+            <div class="input-group">
+                <p>Số điện thoại:</p>
+                <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="Nhập số điện thoại">
+            </div>
+
+            <div class="input-group">
+                <p>Chọn ngày giao:</p>
+                <input type="date" name="delivery_date">
+            </div>
+
+            <div class="input-group">
+                <p>Nhập mã giảm giá (nếu có):</p>
+                <input type="text" name="discount">
+            </div>
+
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Sản phẩm</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                        <th>Thành tiền</th>
+                        <th class="col-1">Tên</th>
+                        <th class="col-2">Giá</th>
+                        <th class="col-3">Số lượng</th>
+                        <th class="col-4">Tổng cộng</th>
                     </tr>
                 </thead>
+
+                <tbody>
+                    <?php foreach ($cart as $product) { ?>
+                        <tr>
+                            <td class="col-1"><?= $product['pd_name'] ?></td>
+
+                            <td class="col-2"><?= convert_currency($product['pd_price']) ?></td>
+
+                            <td class="col-3"><?= $product['ca_quantity'] ?></td>
+
+                            <td class="col-4">
+                                <?= convert_currency($product["pd_price"] * $product["ca_quantity"]) ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
             </table>
-        </div>
 
-        <!-- Thành tiền -->
-        <div class="total-section">
-            <strong>Tổng cộng:</strong>
-            <strong>Tiền ship:</strong>
-            <strong>Giảm giá: </strong>
-            <strong>Tổng thanh toán: </strong>
-        </div>
+            <div class="total-section">
+                <p class="total-title">Tổng cộng:</p>
 
-        <!-- Xác nhận thanh toán -->
-        <button type="submit" class="submit-btn">Xác nhận thanh toán</button>
-    </form>
+                <p class="total-title"> Giảm giá:</p>
+
+                <p class="total-title">Thành tiền:</p>
+            </div>
+
+            <input type="submit" class="btn" value="Xác nhận thanh toán">
+        </form>
+    </div>
 </div>

@@ -96,25 +96,8 @@ trait Account
     {
         $update = "";
 
-        $us_name = $user["us_name"] ?? null;
-        $us_password = $user["us_password"] ?? null;
-        $us_number_phone = $user["us_number_phone"] ?? null;
-        $us_address = $user["us_address"] ?? null;
-
-        if ($us_name) {
-            $update .= "`us_name` = '$us_name',";
-        }
-
-        if ($us_password) {
-            $update .= "`us_password` = '$us_password',";
-        }
-
-        if ($us_number_phone) {
-            $update .= "`us_number_phone` = '$us_number_phone',";
-        }
-
-        if ($us_address) {
-            $update .= "`us_address` = '$us_address',";
+        foreach ($user as $key => $value) {
+            $update .= "`$key` = '$value',";
         }
 
         // Avoid spamming button when nothing changes
@@ -147,19 +130,51 @@ trait Account
 
     function get_user_info()
     {
-        return $_SESSION["us_info"] ?? null;
+        $us_info = $_SESSION["us_info"] ?? null;
+
+        if (!$us_info) {
+            return null;
+        }
+
+        $us_number_phone = $us_info["us_number_phone"];
+
+        $sql = "SELECT *
+                FROM `user`
+                WHERE `us_number_phone` = '$us_number_phone';";
+
+        $result = $this->connection->query($sql)->fetch_assoc();
+
+        $_SESSION["us_info"] = $result;
+        return $_SESSION["us_info"];
     }
 
     function get_admin_info()
     {
-        return $_SESSION["ad_info"] ?? null;
+        $ad_info = $_SESSION["ad_info"] ?? null;
+
+        if (!$ad_info) {
+            return null;
+        }
+
+        $ad_name = $ad_info["ad_name"];
+
+        $sql = "SELECT *
+                FROM `admin`
+                WHERE `ad_name` = '$ad_name';";
+
+        $result = $this->connection->query($sql)->fetch_assoc();
+
+        $_SESSION["ad_info"] = $result;
+        return $_SESSION["ad_info"];
     }
 
-    function logout_user() {
+    function logout_user()
+    {
         unset($_SESSION["us_info"]);
     }
 
-    function logout_admin() {
+    function logout_admin()
+    {
         unset($_SESSION["ad_info"]);
     }
 }

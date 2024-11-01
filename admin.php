@@ -3,7 +3,7 @@ require __DIR__ . "/./api/core.php";
 require __DIR__ . "/./src/util/require_css.php";
 require __DIR__ . "/./src/util/load_image.php";
 require __DIR__ . "/./src/util/convert_currency.php";
-require __DIR__ . "/./src/util/check_admin.php";
+require __DIR__ . "/./src/util/checker.php";
 require __DIR__ . "/./src/util/toast.php";
 
 session_start();
@@ -34,13 +34,13 @@ session_start();
         switch ($direct) {
             // Account
             case "login":
-                block_login();
+                block_login_admin();
                 require "./src/admin/page/login.php";
                 require_css("./src/admin/css/login.css");
                 break;
 
             case "logout":
-                authorize();
+                authorize_admin();
                 $api->logout_admin();
                 set_toast_message("Đăng xuất thành công!");
                 header("location:?direct=login");
@@ -48,26 +48,26 @@ session_start();
 
             // Product
             case "product":
-                authorize();
+                authorize_admin();
                 require "./src/admin/page/product/product.php";
                 require_css("./src/admin/css/product/product.css");
                 break;
 
             case "add_product":
-                authorize();
+                authorize_admin();
                 require "./src/admin/page/product/add_product.php";
                 require_css("./src/admin/css/product/add_product.css");
                 break;
 
             case "edit_product":
-                authorize();
+                authorize_admin();
                 require "./src/admin/page/product/edit_product.php";
                 require_css("./src/admin/css/product/edit_product.css");
                 break;
 
             // Home
             case "home":
-                authorize();
+                authorize_admin();
                 require "./src/admin/page/home.php";
                 require_css("./src/admin/css/home.css");
                 break;

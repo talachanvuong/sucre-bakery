@@ -70,7 +70,7 @@ $products = $api->get_products_by_page($currentPage);
         </tbody>
     </table>
 
-    <div class="page-container"">
+    <div class="page-container">
         <p class="page-text">Trang</p>
         <form method="get">
             <input type="hidden" name="direct" value="product">
