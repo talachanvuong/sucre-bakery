@@ -57,6 +57,15 @@ trait Product
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    function get_products_in_range($min, $max)
+    {
+        $sql = "SELECT *
+                FROM `product`
+                WHERE `pd_price` BETWEEN $min AND $max;";
+        $result = $this->connection->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     function add_product($pd_name, $pd_price, $pd_description, $pdt_id, $pd_image)
     {
         $pd_image = "0x" . bin2hex(file_get_contents($pd_image));
