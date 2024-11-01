@@ -10,6 +10,26 @@ trait Product
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    function get_total_pages()
+    {
+        $productPerPage = 6;
+        $totalProducts = count($this->get_products());
+        return ceil($totalProducts / $productPerPage);
+    }
+
+    function get_products_by_page($page)
+    {
+        $productPerPage = 6;
+        $indexPage = ($page - 1) * $productPerPage;
+
+        $sql = "SELECT *
+                FROM `product`
+                ORDER BY `pd_id` ASC
+                LIMIT $indexPage, $productPerPage;";
+        $result = $this->connection->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     function get_products_by_keyword($keyword)
     {
         $sql = "SELECT *

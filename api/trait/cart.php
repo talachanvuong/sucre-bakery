@@ -7,7 +7,7 @@ trait Cart
                 FROM `cart`
                 INNER JOIN `product`
                 ON `cart`.`pd_id` = `product`.`pd_id`
-                WHERE `us_id` = $us_id
+                WHERE `us_id` = '$us_id'
                 ORDER BY `ca_created_on` ASC;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);

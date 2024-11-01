@@ -11,7 +11,12 @@ if (isset($_POST['deleteProduct'])) {
     toast($result["message"]);
 }
 
-$products = $api->get_products();
+$totalPages = $api->get_total_pages();
+$currentPage = $_GET["page"] ?? 1;
+if ($currentPage < 1 || $currentPage > $totalPages) {
+    $currentPage = 1;
+}
+$products = $api->get_products_by_page($currentPage);
 ?>
 
 <div class="menu-main">
@@ -64,4 +69,15 @@ $products = $api->get_products();
             <?php } ?>
         </tbody>
     </table>
+
+    <div class="page-container"">
+        <p class="page-text">Trang</p>
+        <form method="get">
+            <input type="hidden" name="direct" value="product">
+            <input class="page-input" type="number" min="1" max="<?= $totalPages ?>" onchange="this.form.submit()" name="page"
+                value="<?= $currentPage ?>">
+        </form>
+        <p class="page-text">/</p>
+        <p class="page-text"><?= $totalPages ?></p>
+    </div>
 </div>

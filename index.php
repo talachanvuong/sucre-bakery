@@ -76,6 +76,11 @@ session_start();
             require "./src/user/page/home.php";
             require_css("./src/user/css/home.css");
             break;
+
+        case "payout":
+            require "./src/user/page/pay/payout.php";
+            require_css("./src/user/css/pay/payout.css");
+            break;
     }
 
     require "./src/user/page/footer/footer.php";

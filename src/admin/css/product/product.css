@@ -58,7 +58,6 @@
 
 .menu-main .table .col-4 {
   width: 35%;
-  text-align: justify;
 }
 
 .menu-main .table .col-5 {
@@ -100,11 +99,34 @@
 }
 
 .menu-main .table .delete-button:hover {
-  background-color: #AF1740;
+  background-color: #af1740;
 }
 
 .menu-main .table .product-image {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+
+.page-container {
+  display: flex;
+  gap: 4px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.page-text {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.page-input {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
 }

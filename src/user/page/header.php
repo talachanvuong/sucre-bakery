@@ -22,10 +22,12 @@ global $api;
             <p>Giỏ hàng</p>
 
             <?php
-            $total_quantity = $api->get_cart_total_quantity(1);
-            if ($total_quantity > 0) { ?>
-                <div class="header-cart-total"><?php echo $total_quantity; ?></div>
-            <?php } ?>
+            if (isset($us_info)) {
+                $total_quantity = $api->get_cart_total_quantity($us_info["us_id"]);
+                if ($total_quantity > 0) { ?>
+                    <div class="header-cart-total"><?php echo $total_quantity; ?></div>
+                <?php }
+            } ?>
         </a>
     </div>
 </header>

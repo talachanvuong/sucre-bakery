@@ -1,32 +1,38 @@
 <?php
 global $api;
 
+$us_info = $api->get_user_info();
+$us_id = 0;
+if (isset($us_info)) {
+    $us_id = $us_info["us_id"];
+}
+
 if (isset($_POST["action"])) {
     $pd_id = $_POST["pd_id"];
-
+    
     switch ($_POST["action"]) {
         case "add":
-            if ($api->exist_cart_product(1, $pd_id)) {
-                $product = $api->get_cart_product(1, $pd_id);
-                $api->update_cart_product(1, $pd_id, $product["ca_quantity"] + 1);
+            if ($api->exist_cart_product($us_id, $pd_id)) {
+                $product = $api->get_cart_product($us_id, $pd_id);
+                $api->update_cart_product($us_id, $pd_id, $product["ca_quantity"] + 1);
             } else {
-                $api->add_cart_product(1, $pd_id);
+                $api->add_cart_product($us_id, $pd_id);
             }
             break;
 
         case "remove":
-            $api->remove_cart_product(1, $pd_id);
+            $api->remove_cart_product($us_id, $pd_id);
             break;
 
         case "update":
             $ca_quantity = $_POST["ca_quantity"];
-            $api->update_cart_product(1, $pd_id, $ca_quantity);
+            $api->update_cart_product($us_id, $pd_id, $ca_quantity);
             break;
     }
     header("refresh:0");
 }
 
-$cart = $api->get_cart_products(1);
+$cart = $api->get_cart_products($us_id) ?? [];
 $total = 0;
 ?>
 

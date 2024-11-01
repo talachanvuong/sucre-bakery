@@ -6,19 +6,19 @@
 @property --brown-color {
   syntax: "<color>";
   inherits: false;
-  initial-value: rgb(71, 12, 14);
+  initial-value: #470c0e;
 }
 
 @property --bisque-color {
   syntax: "<color>";
   inherits: false;
-  initial-value: rgb(255, 228, 196);
+  initial-value: #ffe4c4;
 }
 
 @property --pink-color {
   syntax: "<color>";
   inherits: false;
-  initial-value: rgb(255, 226, 226);
+  initial-value: #ffe2e2;
 }
 
 @property --white-color {
@@ -37,6 +37,12 @@
   syntax: "<color>";
   inherits: false;
   initial-value: #3aa6b9;
+}
+
+@property --cream-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fdf5ed;
 }
 
 body {

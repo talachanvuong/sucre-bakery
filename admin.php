@@ -22,7 +22,7 @@ session_start();
 </head>
 
 <body>
-    <div class="admin-layout"">
+    <div class="admin-layout">
         <?php
         $direct = $_GET["direct"] ?? "home";
 
