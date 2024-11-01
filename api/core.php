@@ -2,6 +2,7 @@
 require __DIR__ . "/./trait/product.php";
 require __DIR__ . "/./trait/cart.php";
 require __DIR__ . "/./trait/account.php";
+require __DIR__ . "/./trait/orderBill.php";
 class Api
 {
     private $connection;
@@ -18,6 +19,7 @@ class Api
     use Product;
     use Cart;
     use Account;
+    use OrderBill;
 }
 
 $api = new Api();
