@@ -68,6 +68,7 @@ session_start();
             break;
 
         case "cart":
+            authorize_user();
             require "./src/user/page/pay/cart.php";
             require_css("./src/user/css/pay/cart.css");
             break;
