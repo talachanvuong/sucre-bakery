@@ -21,6 +21,10 @@ $link_text = $us_info ? $us_info["us_name"] : "Đăng nhập";
 
         <?php
         if ($us_info) { ?>
+            <a class="header-option" href="?direct=history">Lịch sử mua hàng</a>
+            
+            <a class="header-option" href="?direct=logout">Đăng xuất</a>
+
             <a class="header-cart" href="?direct=cart">
                 <p>Giỏ hàng</p>
 

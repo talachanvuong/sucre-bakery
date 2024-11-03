@@ -81,6 +81,16 @@ session_start();
             require "./src/user/page/pay/payout.php";
             require_css("./src/user/css/pay/payout.css");
             break;
+
+        case "history":
+            require "./src/user/page/pay/history.php";
+            require_css("./src/user/css/pay/history.css");
+            break;
+
+        case "order":
+            require "./src/user/page/pay/order.php";
+            require_css("./src/user/css/pay/order.css");
+            break;
     }
 
     require "./src/user/page/footer/footer.php";

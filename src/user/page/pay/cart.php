@@ -59,12 +59,13 @@ $total = 0;
                 <tbody>
                     <?php
                     foreach ($cart as $product) {
-                        $total += $product["pd_price"] * $product["ca_quantity"]; ?>
+                        $combinedPrice = $product["pd_price"] * $product["ca_quantity"];
+                        $total += $combinedPrice; ?>
 
                         <tr>
                             <td><img class="product-image" src=<?php load_image($product["pd_image"]); ?>></td>
-                            <td><?php echo $product["pd_name"]; ?></td>
-                            <td><?php convert_currency($product["pd_price"]); ?></td>
+                            <td><?= $product["pd_name"] ?></td>
+                            <td><?= convert_currency($product["pd_price"]) ?></td>
                             <td>
                                 <form method="post">
                                     <input type="hidden" name="action" value="update">
@@ -73,7 +74,7 @@ $total = 0;
                                         value="<?php echo $product["ca_quantity"]; ?>">
                                 </form>
                             </td>
-                            <td><?php convert_currency($product["pd_price"] * $product["ca_quantity"]); ?></td>
+                            <td><?= convert_currency($combinedPrice) ?></td>
                             <td>
                                 <form method="post">
                                     <input type="hidden" name="action" value="remove">
@@ -86,16 +87,9 @@ $total = 0;
                 </tbody>
             </table>
 
-            <div class="cart-seperate">
-                <div class="cart-note">
-                    <label for="note">Ghi chú:</label>
-                    <textarea id="note" rows="2" placeholer="nhập ghi chú của bạn..."></textarea>
-                </div>
-
-                <div class="cart-total-container">
-                    <p class="cart-total-title">Thành tiền:</p>
-                    <p class="cart-total"><?php echo convert_currency($total); ?></p>
-                </div>
+            <div class="cart-total-container">
+                <p class="cart-total-title">Thành tiền:</p>
+                <p class="cart-total"><?= convert_currency($total) ?></p>
             </div>
         </div>
 
