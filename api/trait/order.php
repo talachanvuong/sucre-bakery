@@ -48,7 +48,7 @@ trait Order
                 INNER JOIN `order_status`
                 ON `order`.`os_id` = `order_status`.`os_id`
                 WHERE `us_id` = '$us_id'
-                ORDER BY `od_created_on` ASC;";
+                ORDER BY `od_created_on` DESC;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
