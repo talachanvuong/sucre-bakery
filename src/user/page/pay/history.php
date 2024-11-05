@@ -31,11 +31,11 @@ $orders = $api->get_history_order($us_id);
                 <tbody>
                     <?php foreach ($orders as $order): ?>
                         <tr>
-                            <td><?= htmlspecialchars($order['od_id']) ?></td>
-                            <td><?= htmlspecialchars($order['od_created_on']) ?></td>
-                            <td><?= htmlspecialchars($order['od_delivery_time']) ?></td>
-                            <td><?= htmlspecialchars($order['od_reason'] ?? '') ?></td>
-                            <td><?= htmlspecialchars($order['status_name'] ?? 'Chưa cập nhật') ?></td> 
+                            <td><?= $order['od_id'] ?></td>
+                            <td><?= $order['od_created_on'] ?></td>
+                            <td><?= $order['od_delivery_time'] ?></td>
+                            <td><?= $order['od_reason'] ?? '' ?></td>
+                            <td><?= $order['os_name'] ?></td> 
                             <td>
                                 <form method="post" action="order_details.php">
                                     <input type="hidden" name="od_id" value="<?= $order['od_id'] ?>">
