@@ -92,6 +92,31 @@ session_start();
             require "./src/user/page/pay/order.php";
             require_css("./src/user/css/pay/order.css");
             break;
+
+        case "intro":
+            require "./src/user/page/footer/intro.php";
+            require_css("./src/user/css/footer/intro.css");
+            break;
+
+        case "term":
+            require "./src/user/page/footer/term.php";
+            require_css("./src/user/css/footer/term.css");
+            break;
+
+        case "policy":
+            require "./src/user/page/footer/policy.php";
+            require_css("./src/user/css/footer/policy.css");
+            break;
+
+        case "contact":
+            require "./src/user/page/footer/contact.php";
+            require_css("./src/user/css/footer/contact.css");
+            break;
+
+        case "address":
+            require "./src/user/page/footer/address.php";
+            require_css("./src/user/css/footer/address.css");
+            break;
     }
 
     require "./src/user/page/footer/footer.php";
