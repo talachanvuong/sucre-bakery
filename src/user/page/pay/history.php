@@ -37,10 +37,7 @@ $orders = $api->get_history_order($us_id);
                             <td><?= $order['od_reason'] ?? '' ?></td>
                             <td><?= $order['os_name'] ?></td> 
                             <td>
-                                <form method="post" action="order_details.php">
-                                    <input type="hidden" name="od_id" value="<?= $order['od_id'] ?>">
-                                    <input class="infor-btn" type="submit" value="Chi tiết">
-                                </form>
+                                <a class="infor-btn" href="?direct=particular&od_id=<?php echo $order['od_id']; ?>">Chi tiết</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

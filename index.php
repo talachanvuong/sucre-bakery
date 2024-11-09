@@ -88,6 +88,11 @@ session_start();
             require_css("./src/user/css/pay/history.css");
             break;
 
+        case "particular":
+            require "./src/user/page/pay/particular.php";
+            require_css("./src/user/css/pay/particular.css");
+            break;
+
         case "order":
             require "./src/user/page/pay/order.php";
             require_css("./src/user/css/pay/order.css");
