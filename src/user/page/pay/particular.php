@@ -12,7 +12,8 @@ $order = $api->get_order_info($od_id);
 <div class="layout-container">
     <div class="particular-container">
         <h2 class="particular-title">Chi Tiết Đơn Hàng</h2>
-        <?php if ($order): ?>
+            <p><strong>Mã đơn hàng: </strong> <?= $order[0]['od_id'] ?></p>
+
             <p><strong>Ngày đặt: </strong><?= $order[0]['od_created_on'] ?></p>
 
             <p><strong>Ngày Giao:  </strong><?= $order[0]['od_delivery_time'] ?></p>
@@ -44,24 +45,15 @@ $order = $api->get_order_info($od_id);
                         <tr>
                             <td><?= $product['pd_name'] ?></td>
                             <td><?= $product['c_quantity'] ?></td>
-                            <td><?= convert_currency($combinedPrice) ?> VNĐ</td>
+                            <td><?= convert_currency($combinedPrice) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
 
-            <p><strong>Tổng tiền: </strong><?= convert_currency($order_total) ?> VNĐ</p>
+            <p><strong>Tổng tiền: </strong><?= convert_currency($order_total) ?></p>
 
             <p><strong>Tình trạng: </strong><?= $order[0]['os_name'] ?></p>
 
-            <?php if ($order[0]['os_id'] == 1): ?>
-                <form action="cancel_order.php" method="POST">
-                    <input type="hidden" name="od_id" value="<?= $order[0]['od_id'] ?>">
-                    <button type="submit" class="cancel-btn">Hủy đơn hàng</button>
-                </form>
-            <?php endif; ?>
-        <?php else: ?>
-            <p>Đơn hàng không tồn tại!</p>
-        <?php endif; ?>
     </div>
 </div>

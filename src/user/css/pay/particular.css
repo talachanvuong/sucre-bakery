@@ -75,31 +75,3 @@
     padding: 8px;
     align-content: center;
   }
-.status-text {
-    font-weight: bold;
-    color: var(--brown-color);
-    font-size: 16px;
-    padding: 8px 0;
-    text-align: center;
-}
-
-.cancel-btn {
-    font-family: "Roboto";
-    font-size: 14px;
-    line-height: 20px;
-    background-color: var(--brown-color);
-    color: var(--white-color);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.cancel-btn:hover {
-    background-color: var(--bisque-color);
-    color: var(--brown-color);
-}
