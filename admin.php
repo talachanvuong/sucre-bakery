@@ -5,6 +5,8 @@ require __DIR__ . "/./src/util/load_image.php";
 require __DIR__ . "/./src/util/convert_currency.php";
 require __DIR__ . "/./src/util/checker.php";
 require __DIR__ . "/./src/util/toast.php";
+require __DIR__ . "/./src/util/page.php";
+require __DIR__ . "/./src/util/redirect.php";
 
 session_start();
 ?>
@@ -15,65 +17,36 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/reset-css@5.0.2/reset.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./src/admin/css/admin.css" />
+    <link rel="stylesheet" href="https://unpkg.com/reset-css@5.0.2/reset.css" type="text/css" />
+    <link rel="stylesheet" href="./index.css" type="text/css" />
     <title>Admin</title>
 </head>
 
 <body>
-    <div class="admin-layout">
-        <?php
-        $direct = $_GET["direct"] ?? "home";
+    <?php
+    $direct = $_GET["direct"] ?? "home";
 
-        if ($direct !== "login") {
-            require "./src/admin/page/menu_left.php";
-            require_css("./src/admin/css/menu_left.css");
-        }
+    switch ($direct) {
+        case "login":
+            block_login_admin();
+            require "./src/admin/page/login.php";
+            require_css("./src/admin/css/login.css");
+            break;
 
-        switch ($direct) {
-            // Account
-            case "login":
-                block_login_admin();
-                require "./src/admin/page/login.php";
-                require_css("./src/admin/css/login.css");
-                break;
+        case "logout":
+            authorize_admin();
+            $api->logout_admin();
+            set_toast_message("Đăng xuất thành công!");
+            header("location:?direct=login");
+            exit();
 
-            case "logout":
-                authorize_admin();
-                $api->logout_admin();
-                set_toast_message("Đăng xuất thành công!");
-                header("location:?direct=login");
-                exit();
-
-            // Product
-            case "product":
-                authorize_admin();
-                require "./src/admin/page/product/product.php";
-                require_css("./src/admin/css/product/product.css");
-                break;
-
-            case "add_product":
-                authorize_admin();
-                require "./src/admin/page/product/add_product.php";
-                require_css("./src/admin/css/product/add_product.css");
-                break;
-
-            case "edit_product":
-                authorize_admin();
-                require "./src/admin/page/product/edit_product.php";
-                require_css("./src/admin/css/product/edit_product.css");
-                break;
-
-            // Home
-            case "home":
-                authorize_admin();
-                require "./src/admin/page/home.php";
-                require_css("./src/admin/css/home.css");
-                break;
-        }
-        ?>
-    </div>
+        default:
+            authorize_admin();
+            require "./src/admin/page/panel.php";
+            require_css("./src/admin/css/panel.css");
+            break;
+    }
+    ?>
 </body>
 
 </html>

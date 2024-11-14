@@ -18,19 +18,19 @@ if (isset($_POST['name']) || isset($_POST['address']) || isset($_POST['phone']))
 
     $user = [];
 
-    if ($new_name !== $us_name) {
+    if ($new_name != $us_name) {
         $user["us_name"] = $new_name;
     }
 
-    if ($new_number_phone !== $us_number_phone) {
+    if ($new_number_phone != $us_number_phone) {
         $user["us_number_phone"] = $new_number_phone;
     }
 
-    if ($new_password !== $us_password) {
+    if ($new_password != $us_password) {
         $user["us_password"] = $new_password;
     }
 
-    if ($new_address !== $us_address) {
+    if ($new_address != $us_address) {
         $user["us_address"] = $new_address;
     }
 

@@ -12,7 +12,7 @@ $us_number_phone = $us_info["us_number_phone"];
 
 $method_info = $_POST["method_info"] ?? "default";
 
-if ($method_info === "new") {
+if ($method_info == "new") {
     $us_name = "";
     $us_address = "";
     $us_number_phone = "";
@@ -62,14 +62,14 @@ $total = 0;
         <form class="horizontal-container" method="post" onchange="this.submit()">
             <div class="choice">
                 <input type="radio" name="method_info" <?=
-                    $method_info === "default" ? "checked" : ""
+                    $method_info == "default" ? "checked" : ""
                     ?> value="default">
                 <p>Sử dụng thông tin mặc định</p>
             </div>
 
             <div class="choice">
                 <input type="radio" name="method_info" <?=
-                    $method_info === "new" ? "checked" : ""
+                    $method_info == "new" ? "checked" : ""
                     ?> value="new">
                 <p>Điền mới</p>
             </div>
@@ -80,19 +80,19 @@ $total = 0;
             <div class="input-group">
                 <p>Họ và tên:</p>
                 <input type="text" name="name" placeholder="Nhập tên" minlength="3" maxlength="50" required
-                    value="<?= $us_name ?>" <?= $method_info === "default" ? "readonly" : "" ?>>
+                    value="<?= $us_name ?>" <?= $method_info == "default" ? "readonly" : "" ?>>
             </div>
 
             <div class="input-group">
                 <p>Địa chỉ:</p>
                 <input type="text" name="address" placeholder="Nhập địa chỉ" minlength="3" required
-                    value="<?= $us_address ?>" <?= $method_info === "default" ? "readonly" : "" ?>>
+                    value="<?= $us_address ?>" <?= $method_info == "default" ? "readonly" : "" ?>>
             </div>
 
             <div class="input-group">
                 <p>Số điện thoại:</p>
                 <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="Nhập số điện thoại"
-                    required value="<?= $us_number_phone ?>" <?= $method_info === "default" ? "readonly" : "" ?>>
+                    required value="<?= $us_number_phone ?>" <?= $method_info == "default" ? "readonly" : "" ?>>
             </div>
 
             <div class="input-group">

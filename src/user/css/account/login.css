@@ -1,80 +1,72 @@
 .layout-container {
-  width: 40%;
-  min-height: 100vh;
-  padding-top: calc(80px + 86px); /* Header: 86px */
-  padding-bottom: 80px;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  box-sizing: border-box;
-}
+  min-height: 100vh;
+  padding-bottom: 80px;
+  padding-top: calc(80px + 86px);
+  width: 40%;
 
+  /* Header: 86px */
+}
 .login-container {
   background-color: rgb(253, 245, 237);
-  padding: 20px 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
   box-sizing: border-box;
+  padding: 20px 40px;
+  width: 100%;
 }
-
 .login-container h2 {
-  font-family: "Roboto";
-  margin-bottom: 20px;
-  font-size: 24px;
   color: var(--black-color);
+  font-family: "Roboto";
+  font-size: 24px;
+  margin-bottom: 20px;
   text-align: center;
 }
-
 .input-group {
   margin-bottom: 15px;
 }
-
 .input-group label {
-  font-family: "Roboto";
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
   color: var(--black-color);
-}
-
-.input-group input {
-  width: 100%;
+  display: block;
   font-family: "Roboto";
-  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.input-group input {
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px;
   box-sizing: border-box;
+  font-family: "Roboto";
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
 }
-
 .btn {
   background-color: rgb(84, 35, 37);
-  color: var(--white-color);
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
+  color: var(--white-color);
   cursor: pointer;
   font-size: 16px;
-  width: 100%;
+  padding: 10px 20px;
   transition: 0.3s;
+  width: 100%;
 }
-
 .btn:hover {
   background-color: bisque;
   color: rgb(84, 35, 37);
 }
-
 .register {
   font-family: "Roboto";
   margin-top: 15px;
   text-align: center;
 }
-
 .register p {
-  font-size: 14px;
   color: var(--black-color);
+  font-size: 14px;
 }
-
 .register a {
   color: rgb(71, 12, 14);
 }

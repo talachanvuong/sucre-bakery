@@ -42,6 +42,7 @@ function toast($message)
             border-bottom-right-radius: 16px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             animation: move-toast-panel-in 0.4s ease forwards;
+            z-index: 3;
         }
 
         .toast-process {
@@ -99,10 +100,16 @@ function toast($message)
     </style>
 
     <script class="toast-script">
+        const parent = document.body;
+        const toastPanel = document.getElementsByClassName("toast-panel")[0];
+        const toastStyle = document.getElementsByClassName("toast-style")[0];
+        const toastScript = document.getElementsByClassName("toast-script")[0];
+
+        parent.appendChild(toastPanel);
+        parent.appendChild(toastStyle);
+        parent.appendChild(toastScript);
+
         setTimeout(() => {
-            const toastPanel = document.getElementsByClassName("toast-panel")[0];
-            const toastStyle = document.getElementsByClassName("toast-style")[0];
-            const toastScript = document.getElementsByClassName("toast-script")[0];
             toastPanel.style.animation = "move-toast-panel-out 0.4s ease forwards";
 
             setTimeout(() => {

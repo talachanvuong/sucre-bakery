@@ -101,7 +101,7 @@ trait Account
         }
 
         // Avoid spamming button when nothing changes
-        if ($update === "") {
+        if ($update == "") {
             return [
                 "success" => true,
                 "message" => "Không có gì cập nhật!"

@@ -6,7 +6,7 @@ function convert_currency($price)
     $counter = 0;
 
     foreach ($array as $char) {
-        if ($counter === 3) {
+        if ($counter == 3) {
             $formatted[] = '.';
             $counter = 0;
         }

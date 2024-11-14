@@ -10,21 +10,19 @@ trait Product
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    function get_total_pages()
+    function get_total_pages($productPerPage)
     {
-        $productPerPage = 6;
         $totalProducts = count($this->get_products());
         return ceil($totalProducts / $productPerPage);
     }
 
-    function get_products_by_page($page)
+    function get_products_by_page($page, $productPerPage)
     {
-        $productPerPage = 6;
         $indexPage = ($page - 1) * $productPerPage;
 
         $sql = "SELECT *
                 FROM `product`
-                ORDER BY `pd_id` ASC
+                ORDER BY `pd_last_update` DESC
                 LIMIT $indexPage, $productPerPage;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
@@ -132,7 +130,7 @@ trait Product
         $update = "";
 
         foreach ($product as $key => $value) {
-            if ($key === "pd_image") {
+            if ($key == "pd_image") {
                 $pd_image = "0x" . bin2hex(file_get_contents($value));
 
                 // pd_image is image so doesn't need to put into ''
@@ -143,14 +141,14 @@ trait Product
         }
 
         // Avoid spamming button when nothing changes
-        if ($update === "") {
+        if ($update == "") {
             return [
                 "success" => true,
                 "message" => "Không có gì cập nhật!"
             ];
         }
 
-        $update = rtrim($update, ',');
+        $update .= "`pd_last_update` = NOW()";
 
         $sql = "UPDATE `product`
                 SET $update

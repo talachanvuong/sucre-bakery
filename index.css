@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   src: url(./public/font/Roboto.ttf);
 }
 
@@ -43,6 +43,18 @@
   syntax: "<color>";
   inherits: false;
   initial-value: #fdf5ed;
+}
+
+@property --shadow-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgba(0, 0, 0, 0.2);
+}
+
+@property --grey-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #808080;
 }
 
 body {

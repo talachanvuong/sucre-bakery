@@ -3,81 +3,80 @@ global $api;
 
 toast_session();
 
-if (isset($_POST['deleteProduct'])) {
-    $id = $_POST['productId'];
+if (isset($_POST["action"])) {
+    $pd_id = $_POST["pd_id"];
 
-    $result = $api->remove_product($id);
-
-    toast($result["message"]);
+    switch ($_POST["action"]) {
+        case "remove":
+            $result = $api->remove_product($pd_id);
+            toast($result["message"]);
+            break;
+    }
 }
 
-$totalPages = $api->get_total_pages();
-$currentPage = $_GET["page"] ?? 1;
-if ($currentPage < 1 || $currentPage > $totalPages) {
-    $currentPage = 1;
-}
-$products = $api->get_products_by_page($currentPage);
+$productPerPage = 3;
+$totalPages = $api->get_total_pages($productPerPage);
+$currentPage = get_current_page($totalPages);
+$products = $api->get_products_by_page($currentPage, $productPerPage);
 ?>
 
-<div class="menu-main">
-    <p class="title">Danh sách sản phẩm</p>
+<p class="title">Danh sách sản phẩm</p>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="col-1">Hình ảnh</th>
-                <th class="col-2">Tên</th>
-                <th class="col-3">Giá</th>
-                <th class="col-4">Mô tả</th>
-                <th class="col-5">Loại</th>
-                <th class="col-6">Hành động</th>
-            </tr>
-        </thead>
+<div class="list-item">
+    <?php foreach ($products as $product) { ?>
+        <div class="item">
+            <div class="item-image">
+                <img class="product-image" src=<?= load_image($product["pd_image"]) ?>>
 
-        <tbody>
-            <?php foreach ($products as $product) { ?>
-                <tr>
-                    <td class="col-1">
-                        <img class="product-image" src=<?php load_image($product["pd_image"]); ?>>
-                    </td>
+                <div class="item-action">
+                    <form action="?direct=edit_product" method="post">
+                        <input type="hidden" name="action" value="edit">
+                        <input type="hidden" name="pd_id" value="<?= $product["pd_id"] ?>">
+                        <button class="edit-button" type="submit">Sửa</button>
+                    </form>
 
-                    <td class="col-2"><?php echo $product['pd_name']; ?></td>
+                    <form method="post">
+                        <input type="hidden" name="action" value="remove">
+                        <input type="hidden" name="pd_id" value="<?= $product["pd_id"] ?>">
+                        <button class="remove-button" type="submit">Xóa</button>
+                    </form>
+                </div>
+            </div>
 
-                    <td class="col-3"><?php convert_currency($product['pd_price']); ?></td>
+            <div class="item-detail">
+                <p class="product-name">
+                    <?= $product["pd_name"] ?>
+                </p>
 
-                    <td class="col-4"><?php echo $product['pd_description']; ?></td>
+                <p class="product-price">
+                    <?= convert_currency($product["pd_price"]) ?>
+                </p>
 
-                    <td class="col-5">
-                        <?php
-                        $productType = $api->get_product_type_by_id($product["pdt_id"]);
-                        echo $productType["pdt_name"];
-                        ?>
-                    </td>
+                <p class="product-type">
+                    <?php
+                    $productType = $api->get_product_type_by_id($product["pdt_id"]);
+                    echo $productType["pdt_name"];
+                    ?>
+                </p>
 
-                    <td class="col-6">
-                        <form action="?direct=edit_product" method="post">
-                            <input type="hidden" name="productId" value="<?php echo $product['pd_id']; ?>">
-                            <input class="edit-button" type="submit" value="Sửa">
-                        </form>
+                <p class="product-description" title="<?= $product["pd_description"] ?>">
+                    <?= $product["pd_description"] ?>
+                </p>
+            </div>
+        </div>
+    <?php } ?>
+</div>
 
-                        <form method="post">
-                            <input type="hidden" name="productId" value="<?php echo $product['pd_id']; ?>">
-                            <input class="delete-button" type="submit" name="deleteProduct" value="Xoá">
-                        </form>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+<div class="page">
+    <p class="text">Trang</p>
 
-    <div class="page-container">
-        <p class="page-text">Trang</p>
-        <form method="get">
-            <input type="hidden" name="direct" value="product">
-            <input class="page-input" type="number" min="1" max="<?= $totalPages ?>" onchange="this.form.submit()" name="page"
-                value="<?= $currentPage ?>">
-        </form>
-        <p class="page-text">/</p>
-        <p class="page-text"><?= $totalPages ?></p>
-    </div>
+    <form method="get">
+        <input type="hidden" name="direct" value="product">
+        <input class="input" type="number" min="1" max="<?= $totalPages ?>" onchange="this.form.submit()" name="page"
+            value="<?= $currentPage ?>">
+    </form>
+
+    <p class="text">
+        / <?= $totalPages ?>
+    </p>
 </div>
