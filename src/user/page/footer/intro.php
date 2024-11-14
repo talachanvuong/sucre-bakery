@@ -1,21 +1,22 @@
+<div class="layout-container">
+    <div class= " intro-container">
+        <p class="intro-title">Giới Thiệu </p>
+            <div class="intro-content">
+                <p><strong>Sucré Bakery</strong> – Vị ngọt trong từng khoảnh khắc.</p>
 
-<head>
-    <link rel="stylesheet" href="../../../css/user/footer/intro.css">
-</head>
-<div class= " intro-contener">
-        <h1>Giới Thiệu</h1>
-        <p>
-        Chào mừng đến với Sucré Bakery – Thiên đường bánh ngọt trực tuyến!<br>
-        <br>
+                <p>               
+                     Chào mừng bạn đến với Sucré Bakery – không gian ấm cúng nơi niềm đam mê và sự tận tâm dành cho bánh ngọt được thổi hồn vào từng lớp bánh. Được thành lập với mong muốn mang đến những trải nghiệm ẩm thực đáng nhớ, Sucré tự hào là tiệm bánh chuyên phục vụ các loại bánh ngọt, bánh kem thủ công và nhiều loại bánh khác, luôn sử dụng nguyên liệu tươi ngon và chất lượng nhất.
+                </p>
 
-Tại Sucré Bakery, chúng tôi mang đến những chiếc bánh ngọt ngào, thơm ngon và đẹp mắt, được tạo nên từ những nguyên liệu tươi ngon và công thức độc quyền. Với niềm đam mê dành cho nghệ thuật làm bánh, mỗi sản phẩm của chúng tôi đều được chăm chút tỉ mỉ, từ hương vị đến thiết kế, để mang đến cho bạn trải nghiệm ngọt ngào và đáng nhớ.<br>
-<br>
+                <p>
+                    Mỗi chiếc bánh tại Sucré là sự kết hợp tinh tế giữa hương vị truyền thống và phong cách hiện đại. Chúng tôi chăm chút từng chi tiết nhỏ, từ lớp bánh mềm mịn, vị kem ngọt ngào, cho đến cách trang trí độc đáo, tạo nên những tác phẩm không chỉ đẹp mắt mà còn làm say lòng người. Với các dòng sản phẩm phong phú từ bánh sinh nhật, bánh cưới, bánh ngọt thường ngày cho đến những món bánh thiết kế riêng cho các sự kiện đặc biệt, Sucré mong muốn đồng hành cùng bạn trong những khoảnh khắc ngọt ngào nhất.
+                </p>
 
-Dù là sinh nhật, lễ kỷ niệm, hay một buổi tối thưởng thức bánh ngọt cùng gia đình, Sucré Bakery luôn sẵn sàng phục vụ bạn với những món bánh phong phú như bánh kem, bánh quy, bánh tart và nhiều món ngon khác. Chỉ với vài cú click chuột, bạn có thể chọn ngay những chiếc bánh yêu thích và chúng tôi sẽ giao tận nơi, đảm bảo bánh đến tay bạn luôn tươi mới.<br>
-<br>
+                <p>
+                    Tại Sucré Bakery, chúng tôi không chỉ làm bánh, mà còn mang đến những câu chuyện, những cảm xúc và những ký ức đáng nhớ thông qua mỗi sản phẩm. Hãy ghé thăm và thưởng thức để cảm nhận từng miếng bánh như một nốt nhạc ngọt ngào hòa quyện trong bản giao hưởng của cuộc sống. Chúng tôi luôn sẵn sàng chào đón và phục vụ bạn bằng cả trái tim và niềm đam mê của mình.
+                </p>
 
-Hãy để Sucré Bakery biến những khoảnh khắc bình thường trở nên đặc biệt hơn. Trải nghiệm hương vị ngọt ngào ngay hôm nay!<br>
-</p>
-
+                <p><strong>Sucré Bakery – Vị ngọt trong từng khoảnh khắc.</strong></p>
+            </div>
+    </div>
 </div>
-</body>

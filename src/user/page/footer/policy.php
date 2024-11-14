@@ -1,43 +1,32 @@
-<head>
-    <link rel="stylesheet" href="../../../css/user/footer/policy.css">
-</head>
-<div class = " policy-contener" >
-    <h1>Chính Sách</h1>
-    <p>
-    Chính sách bảo mật
-Cập nhật lần cuối: 22 tháng 9 năm 2024<br>
-Điều 1: Thu thập thông tin cá nhân người dùng
-Chúng tôi có thể yêu cầu bạn cung cấp cho chúng tôi một số thông tin cụ thể bao gồm: địa chỉ email, họ tên, giới tính.
-</p>
-    <p>
-Điều 2: Mục đích thu thập thông tin cá nhân người dùng
-Chúng tôi có thể sử dụng, tiết lộ, xử lí thông tin cá nhân của bạn cho một số mục đích sau:
-1. Nhận dạng, xác minh danh tính người dùng.
-2. Liên hệ, hỗ trợ, tư vấn về các dịch vụ của chúng tôi.
-3. Nghiên cứu, phân tích dữ liệu phục vụ cho việc phát triển dịch vụ của chúng tôi.
-4. Tiếp thị sản phẩm trong tương lai.
-5. Lưu trữ trên máy chủ, sao lưu.
-6. Gửi thông báo mà chúng tôi cho rằng cần thiết hoặc bạn sẽ quan tâm.
-</p>
-<p>
+<div class="layout-container">
+    <div class = " policy-container" >
+        <p class="policy-title">Chính Sách</p>
+        <div class="policy-content">
+            <h3>1. Chính sách bảo mật</h3>
+                <p><strong>Bảo vệ thông tin cá nhân của khách hàng:</strong> Bao gồm tên, số điện thoại, địa chỉ giao hàng, email,... Đảm bảo khách hàng cảm thấy an tâm khi cung cấp thông tin.</p>
+                <p><strong>Xây dựng niềm tin:</strong> Một chính sách bảo mật rõ ràng cho thấy tiệm bánh có trách nhiệm trong việc bảo vệ thông tin của khách hàng, giúp xây dựng uy tín và niềm tin.</p>
+                <p><strong>Tuân thủ pháp luật:</strong> Tại nhiều quốc gia và vùng lãnh thổ, việc thu thập và sử dụng thông tin khách hàng yêu cầu doanh nghiệp phải tuân thủ các quy định bảo mật dữ liệu.</p>
+                <p><strong>Giảm thiểu rủi ro:</strong> Nếu không có chính sách bảo mật, việc rò rỉ thông tin khách hàng có thể dẫn đến các vấn đề pháp lý và làm ảnh hưởng đến danh tiếng của tiệm.</p>
+            
+            <h3>2. Chính Sách Đặt Hàng</h3>
+                <p><strong>Đặt Hàng Trực Tiếp:</strong> Khách hàng có thể đặt bánh trực tiếp tại cửa hàng hoặc qua số hotline của Sucré Bakery.</p>
+                <p><strong>Đặt Hàng Online:</strong> Để thuận tiện hơn, chúng tôi cung cấp dịch vụ đặt hàng online qua trang web chính thức và các nền tảng mạng xã hội của Sucré Bakery.</p>
+                <p><strong>Thời Gian Đặt Hàng:</strong> Để đảm bảo chất lượng, vui lòng đặt bánh trước từ 24 - 48 giờ, đặc biệt đối với các đơn hàng bánh sinh nhật, bánh cưới hoặc bánh yêu cầu thiết kế riêng.</p>
+        
+            <h3>3. Chính Sách Thanh Toán</h3>
+                <p><strong>Phương Thức Thanh Toán:</strong> Sucré Bakery chấp nhận thanh toán bằng tiền mặt, chuyển khoản ngân hàng và các phương thức thanh toán trực tuyến như Momo, ZaloPay,…</p>
+                <p><strong>Thanh Toán Trước:</strong>  Đối với các đơn hàng đặt trước hoặc bánh thiết kế đặc biệt, khách hàng cần thanh toán trước 50% giá trị đơn hàng. Số tiền còn lại sẽ được thanh toán khi nhận hàng.</p>
 
-Điều 3: Bảo mật thông tin cá nhân người dùng
-Chúng tôi sẽ cố gắng hết sức để bảo vệ dữ liệu của bạn. Hãy nhớ rằng không có phương pháp nào 100% có thể giúp dữ liệu của bạn hoàn toàn bảo mật khi dữ liệu được truyền qua Internet hoặc lưu trữ điện tử.
-</p>
-<p>
-Điều 4: Sử dụng và xử lý Cookies
-1. Chúng tôi có thể sử dụng Cookies để người dùng không phải nhập thông tin đăng nhập của mình cho mỗi lần vào nền tảng.
-2. Cookies sẽ hết hạn sau một khoảng thời gian nhất định. Sau đó, để sử dụng tiếp dịch vụ, chúng tôi có thể yêu cầu bạn nhập lại thông tin đăng nhập của mình.
-</p>
-<p>
-Điều 5: Thay đổi chính sách bảo mật
-1. Chúng tôi có thể cập nhật chính sách bảo mật của mình theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng chính sách bảo mật mới trên trang này.
-2. Bạn nên xem chính sách bảo mật này định kỳ để biết bất kỳ thay đổi nào. Những thay đổi đối với chính sách bảo mật này có hiệu lực khi chúng được đăng trên trang này.
-</p>
-<p>
-Điều 6: Thông tin liên hệ
-Nếu bạn có bất kỳ thắc mắc gì về chính sách bảo mật này, bạn có thể liên hệ với chúng tôi bằng cách:
-1. Nhắn tin trực tiếp tại fanpage: VAir Zone.
-2. Gửi thư tới địa chỉ email: vair.zone@gmail.com.  
-    </p>
+            <h3>4. Chính Sách Giao Hàng</h3>
+                <p><strong>Phạm Vi Giao Hàng:</strong> Sucré Bakery cung cấp dịch vụ giao hàng trong khu vực thành phố. Phí giao hàng sẽ được tính dựa trên khoảng cách và phương thức giao hàng.</p>
+                <p><strong>Thời Gian Giao Hàng:</strong> Chúng tôi cố gắng giao hàng đúng giờ theo yêu cầu của khách hàng. Với độ trễ tối đa 30 phút trong trường hợp thời tiết hoặc giao thông ảnh hưởng.</p>
+                <p><strong>Nhận Hàng Tại Cửa Hàng:</strong> Khách hàng có thể lựa chọn nhận bánh trực tiếp tại cửa hàng mà không phải trả phí giao hàng.</p>
+        
+            <h3>5. Chính Sách Đổi Trả</h3>
+                <p><strong>Trường Hợp Đổi Trả:</strong> Sucré Bakery chỉ hỗ trợ đổi trả đối với các trường hợp bánh bị lỗi từ phía tiệm như nhầm lẫn trong thiết kế hoặc chất lượng không đảm bảo.</p>
+                <p><strong>Điều Kiện Đổi Trả:</strong> Bánh cần được giữ nguyên hiện trạng khi mang đến cửa hàng để tiến hành kiểm tra và hỗ trợ.</p>
+            <h3>6. Hỗ Trợ Khách Hàng</h3>
+                <p>Nếu có bất kỳ câu hỏi hoặc vấn đề nào liên quan đến đơn hàng, hãy liên hệ với Sucré Bakery qua hotline hoặc email, chúng tôi luôn sẵn sàng hỗ trợ bạn nhanh chóng.</p>
+        </div>
     </div>
+</div>

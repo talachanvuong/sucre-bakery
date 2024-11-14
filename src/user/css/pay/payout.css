@@ -75,7 +75,7 @@
   text-align: center;
   background-color: #f4f4f4;
 
-  border: 1px solid #000;
+  border: 1px solid var(--black-color);
   padding: 8px;
   align-content: center;
 }
@@ -84,8 +84,7 @@
   font-family: "Roboto";
   font-size: 16px;
   line-height: 24px;
-
-  border: 1px solid #000;
+  border: 1px solid var(--black-color);
   padding: 8px;
   align-content: center;
 }
@@ -136,8 +135,8 @@
 }
 
 .btn {
-  background-color: rgb(84, 35, 37);
-  color: #fff;
+  background-color: var(--brown-color);
+  color: var(--white-color);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -148,6 +147,6 @@
 }
 
 .btn:hover {
-  background-color: bisque;
-  color: rgb(84, 35, 37);
+  background-color: var(--bisque-color);
+  color: var(--brown-color);
 }
