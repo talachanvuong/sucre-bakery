@@ -38,7 +38,7 @@
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 5px;
-  color: rgb(71, 12, 14);
+  color: var(--brown-color);
   width: 100%;
   font-weight: bold;
 }
@@ -60,8 +60,8 @@
   font-size: 16px;
   line-height: 24px;
   padding: 10px;
-  color: bisque;
-  background-color: rgb(71, 12, 14);
+  color: var(--bisque-color);
+  background-color: var(--brown-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -70,6 +70,6 @@
 }
 
 .button:hover {
-  background-color: bisque;
-  color: rgb(71, 12, 14);
+  background-color: var(--bisque-color);
+  color: var(--brown-color);
 }
