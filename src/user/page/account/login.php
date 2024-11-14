@@ -1,7 +1,6 @@
 <?php
+require_css("./src/user/css/account/login.css");
 global $api;
-
-toast_session();
 
 if (isset($_POST["phone"]) && isset($_POST["password"])) {
     $us_number_phone = $_POST["phone"];

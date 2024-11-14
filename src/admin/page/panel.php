@@ -1,6 +1,6 @@
 <?php
+require_css("./src/admin/css/panel.css");
 global $api;
-global $direct;
 
 $ad_info = $api->get_admin_info();
 ?>
@@ -170,27 +170,23 @@ $ad_info = $api->get_admin_info();
 
     <div class="content">
         <?php
-        switch ($direct) {
+        switch (DIRECT) {
             // Account
             case "home":
                 require "./src/admin/page/home.php";
-                require_css("./src/admin/css/home.css");
                 break;
 
             // Product
             case "product":
                 require "./src/admin/page/product/product.php";
-                require_css("./src/admin/css/product/product.css");
                 break;
 
             case "add_product":
                 require "./src/admin/page/product/add_product.php";
-                require_css("./src/admin/css/product/add_product.css");
                 break;
 
             case "edit_product":
                 require "./src/admin/page/product/edit_product.php";
-                require_css("./src/admin/css/product/edit_product.css");
                 break;
         }
         ?>

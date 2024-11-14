@@ -1,7 +1,7 @@
 <?php
+require_css("./src/user/css/pay/payout.css");
 global $api;
 
-toast_session();
 date_default_timezone_set("Asia/Bangkok");
 
 $us_info = $api->get_user_info();
@@ -20,7 +20,7 @@ if ($method_info == "new") {
 
 if (isset($_POST["action"])) {
     $od_created_on = date("Y-m-d H:i:s");
-    $od_delivery_time = str_replace('T', ' ', $_POST['delivery_time']);
+    $od_delivery_time = str_replace("T", " ", $_POST["delivery_time"]);
     $od_person_receive = $_POST["name"];
     $od_address = $_POST["address"];
     $od_number_phone = $_POST["phone"];
@@ -39,9 +39,9 @@ if (isset($_POST["action"])) {
     ];
 
     $result = $api->create_order($us_id, $order);
-    $api->clear_cart($us_id);
 
     if ($result["success"]) {
+        $api->clear_cart($us_id);
         set_toast_message($result["message"]);
         header("location:?direct=history");
         exit();
@@ -50,7 +50,7 @@ if (isset($_POST["action"])) {
     }
 }
 
-$minDateTime = date("Y-m-d\TH:i", strtotime('+1 day'));
+$minDateTime = date("Y-m-d\TH:i", strtotime("+1 day"));
 $cart = $api->get_cart_products($us_id);
 $total = 0;
 ?>
@@ -114,7 +114,7 @@ $total = 0;
                         $combinedPrice = $product["pd_price"] * $product["ca_quantity"];
                         $total += $combinedPrice; ?>
                         <tr>
-                            <td class="col-1"><?= $product['pd_name'] ?></td>
+                            <td class="col-1"><?= $product["pd_name"] ?></td>
 
                             <td class="col-2"><?= $product["ca_quantity"] ?></td>
 

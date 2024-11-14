@@ -19,7 +19,7 @@ trait Order
 
         try {
             $this->connection->query($sql);
-            $this->add_to_cash($us_id, $od_id);
+            $this->add_to_product_order($us_id, $od_id);
             return [
                 "success" => true,
                 "message" => "Đã đặt hàng thành công!"
@@ -32,12 +32,16 @@ trait Order
         }
     }
 
-    function add_to_cash($us_id, $od_id)
+    function add_to_product_order($us_id, $od_id)
     {
-        $sql = "INSERT INTO `cash` (`pd_id`, `od_id`, `c_quantity`, `c_created_on`)
-                SELECT `pd_id`, '$od_id', `ca_quantity`, `ca_created_on`
-                FROM `cart`
-                WHERE `us_id` = '$us_id';";
+        $sql = "INSERT INTO `product_order` (`od_id`, `pod_name`, `pod_quantity`,
+                            `pod_price`, `pod_created_on`)
+                SELECT '$od_id', p.`pd_name`, ca.`ca_quantity`,
+                       p.`pd_price`, ca.`ca_created_on`
+                FROM `cart` as ca
+                INNER JOIN `product` as p
+                WHERE ca.`pd_id` = p.`pd_id`
+                AND ca.`us_id` = '$us_id';";
         $this->connection->query($sql);
     }
 
@@ -59,20 +63,17 @@ trait Order
                 FROM `order`
                 INNER JOIN `order_status`
                 ON `order`.`os_id` = `order_status`.`os_id`
-                WHERE `od_id` = '$od_id'
-                ORDER BY `od_created_on` ASC;";
+                WHERE `od_id` = '$od_id';";
         $result = $this->connection->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
+        return $result->fetch_assoc();
     }
 
     function get_order_products_info($od_id)
     {
         $sql = "SELECT *
-                FROM `cash`
-                INNER JOIN `product`
-                ON `cash`.`pd_id` = `product`.`pd_id`
+                FROM `product_order`
                 WHERE `od_id` = '$od_id'
-                ORDER BY `c_created_on` ASC;";
+                ORDER BY `pod_created_on` ASC;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }

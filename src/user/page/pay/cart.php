@@ -1,7 +1,6 @@
 <?php
+require_css("./src/user/css/pay/cart.css");
 global $api;
-
-toast_session();
 
 $us_info = $api->get_user_info();
 $us_id = $us_info["us_id"];

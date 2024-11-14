@@ -1,5 +1,7 @@
 <?php
+require_css("./src/user/css/product/detail.css");
 global $api;
+
 $pd_id = $_GET["pd_id"];
 $product = $api->get_product_by_id($pd_id);
 $productType = $api->get_product_type_by_id($product["pdt_id"]);

@@ -1,7 +1,6 @@
 <?php
+require_css("./src/admin/css/product/product.css");
 global $api;
-
-toast_session();
 
 if (isset($_POST["action"])) {
     $pd_id = $_POST["pd_id"];
@@ -30,7 +29,6 @@ $products = $api->get_products_by_page($currentPage, $productPerPage);
 
                 <div class="item-action">
                     <form action="?direct=edit_product" method="post">
-                        <input type="hidden" name="action" value="edit">
                         <input type="hidden" name="pd_id" value="<?= $product["pd_id"] ?>">
                         <button class="edit-button" type="submit">Sửa</button>
                     </form>

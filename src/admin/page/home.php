@@ -1,5 +1,6 @@
 <?php
-toast_session();
+require_css("./src/admin/css/home.css");
+global $api;
 ?>
 
 <div class="container">

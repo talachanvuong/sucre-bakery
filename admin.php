@@ -7,8 +7,10 @@ require __DIR__ . "/./src/util/checker.php";
 require __DIR__ . "/./src/util/toast.php";
 require __DIR__ . "/./src/util/page.php";
 require __DIR__ . "/./src/util/redirect.php";
+require __DIR__ . "/./src/util/constant.php";
 
 session_start();
+toast_session();
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +26,10 @@ session_start();
 
 <body>
     <?php
-    $direct = $_GET["direct"] ?? "home";
-
-    switch ($direct) {
+    switch (DIRECT) {
         case "login":
             block_login_admin();
             require "./src/admin/page/login.php";
-            require_css("./src/admin/css/login.css");
             break;
 
         case "logout":
@@ -43,7 +42,6 @@ session_start();
         default:
             authorize_admin();
             require "./src/admin/page/panel.php";
-            require_css("./src/admin/css/panel.css");
             break;
     }
     ?>

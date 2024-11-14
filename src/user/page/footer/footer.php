@@ -1,3 +1,8 @@
+<?php
+require_css("./src/user/css/footer/footer.css");
+global $api;
+?>
+
 <footer>
     <a class="link" href="?direct=intro">Giới thiệu</a>
     <a class="link" href="?direct=term">Điều khoản</a>

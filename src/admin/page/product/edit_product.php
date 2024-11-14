@@ -1,7 +1,6 @@
 <?php
+require_css("./src/admin/css/product/handle_product.css");
 global $api;
-
-toast_session();
 
 $pd_id = $_POST["pd_id"];
 $product = $api->get_product_by_id($pd_id);
@@ -14,7 +13,7 @@ $pd_image = $product["pd_image"];
 
 if (isset($_POST["action"])) {
     switch ($_POST["action"]) {
-        case "update":
+        case "edit":
             $new_name = $_POST["pd_name"];
             $new_price = $_POST["pd_price"];
             $new_description = $_POST["pd_description"];
@@ -23,6 +22,7 @@ if (isset($_POST["action"])) {
             $new_image_size = $_FILES["pd_image"]["size"];
             
             $max_size = 100 * 1024;
+
             if ($new_image_size > $max_size) {
                 toast("Dung lượng ảnh phải nhỏ hơn 100KB!");
                 break;
@@ -67,7 +67,7 @@ if (isset($_POST["action"])) {
 <p class="title">Sửa sản phẩm</p>
 
 <form class="container" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="action" value="update">
+    <input type="hidden" name="action" value="edit">
     <input type="hidden" name="pd_id" value="<?= $pd_id ?>">
 
     <div class="form-container">
@@ -99,11 +99,11 @@ if (isset($_POST["action"])) {
                     $productTypes = $api->get_product_types();
 
                     foreach ($productTypes as $productType) {
-                        $selectedProductTypeId = $productType["pdt_id"];
-                        $selectedProductTypeName = $productType["pdt_name"]; ?>
+                        $productTypeId = $productType["pdt_id"];
+                        $productTypeName = $productType["pdt_name"]; ?>
 
-                        <option value="<?= $selectedProductTypeId ?>" <?= ($selectedProductTypeId == $pdt_id) ? "selected" : "" ?>>
-                            <?= $selectedProductTypeName ?>
+                        <option value="<?= $productTypeId ?>" <?= ($productTypeId == $pdt_id) ? "selected" : "" ?>>
+                            <?= $productTypeName ?>
                         </option>
                     <?php } ?>
                 </select>
@@ -116,6 +116,6 @@ if (isset($_POST["action"])) {
     <div class="image-container">
         <img class="product-image" src=<?= load_image($pd_image) ?>>
 
-        <input class="upload" type="file" name="pd_image">
+        <input class="upload" type="file" name="pd_image" accept="image/*">
     </div>
 </form>

@@ -1,5 +1,7 @@
 <?php
+require_css("./src/user/css/product/search.css");
 global $api;
+
 $showResult = false;
 $keyword = "";
 $products = [];

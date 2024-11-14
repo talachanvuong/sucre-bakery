@@ -27,7 +27,7 @@ function toast($message)
 { ?>
     <div class="toast-panel">
         <div class="toast-process"></div>
-        <p class="toast-message"><?php echo $message; ?></p>
+        <p class="toast-message"><?= $message ?></p>
     </div>
 
     <style class="toast-style">
@@ -100,23 +100,27 @@ function toast($message)
     </style>
 
     <script class="toast-script">
-        const parent = document.body;
-        const toastPanel = document.getElementsByClassName("toast-panel")[0];
-        const toastStyle = document.getElementsByClassName("toast-style")[0];
-        const toastScript = document.getElementsByClassName("toast-script")[0];
+        function hide_toast() {
+            const parent = document.body;
+            const toastPanel = document.getElementsByClassName("toast-panel")[0];
+            const toastStyle = document.getElementsByClassName("toast-style")[0];
+            const toastScript = document.getElementsByClassName("toast-script")[0];
 
-        parent.appendChild(toastPanel);
-        parent.appendChild(toastStyle);
-        parent.appendChild(toastScript);
-
-        setTimeout(() => {
-            toastPanel.style.animation = "move-toast-panel-out 0.4s ease forwards";
+            parent.appendChild(toastPanel);
+            parent.appendChild(toastStyle);
+            parent.appendChild(toastScript);
 
             setTimeout(() => {
-                toastPanel.remove();
-                toastStyle.remove();
-                toastScript.remove();
-            }, 400);
-        }, 4000);
+                toastPanel.style.animation = "move-toast-panel-out 0.4s ease forwards";
+
+                setTimeout(() => {
+                    toastPanel.remove();
+                    toastStyle.remove();
+                    toastScript.remove();
+                }, 400);
+            }, 4000);
+        }
+        
+        hide_toast();
     </script>
 <?php } ?>

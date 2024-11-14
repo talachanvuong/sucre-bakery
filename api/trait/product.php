@@ -79,7 +79,8 @@ trait Product
     {
         $sql = "SELECT *
                 FROM `product`
-                WHERE `pd_price` BETWEEN $min AND $max;";
+                WHERE `pd_price` BETWEEN $min AND $max
+                ORDER BY `pd_id` ASC;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -89,8 +90,8 @@ trait Product
         $pd_image = "0x" . bin2hex(file_get_contents($pd_image));
 
         // pd_image is image so doesn't need to put into ''
-        $sql = "INSERT INTO `product` (`pd_name`, `pd_price`, `pd_description`, `pdt_id`, `pd_image`)
-                VALUES ('$pd_name', $pd_price, '$pd_description', $pdt_id, $pd_image);";
+        $sql = "INSERT INTO `product` (`pd_name`, `pd_price`, `pd_description`, `pdt_id`, `pd_image`, `pd_last_update`)
+                VALUES ('$pd_name', $pd_price, '$pd_description', $pdt_id, $pd_image, NOW());";
 
         try {
             $this->connection->query($sql);

@@ -2,7 +2,11 @@
 function redirect($path)
 { ?>
     <script>
-        window.location.href = "<?= $path ?>";
-        document.currentScript.remove();
+        function redirect() {
+            window.location.href = "<?= $path ?>";
+            document.currentScript.remove();
+        }
+
+        redirect();
     </script>
 <?php } ?>

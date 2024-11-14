@@ -1,7 +1,6 @@
 <?php
+require_css("./src/admin/css/login.css");
 global $api;
-
-toast_session();
 
 if (isset($_POST["ad_name"]) && isset($_POST["ad_password"])) {
     $ad_name = $_POST["ad_name"];

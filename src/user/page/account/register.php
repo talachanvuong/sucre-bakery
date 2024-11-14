@@ -1,7 +1,6 @@
 <?php
+require_css("./src/user/css/account/register.css");
 global $api;
-
-toast_session();
 
 if (isset($_POST["username"]) && isset($_POST["phone"]) && isset($_POST["password"])) {
     $us_name = $_POST["username"];

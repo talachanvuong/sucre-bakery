@@ -1,4 +1,5 @@
 <?php
+require_css("./src/user/css/header.css");
 global $api;
 
 $us_info = $api->get_user_info();
