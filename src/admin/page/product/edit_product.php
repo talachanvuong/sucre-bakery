@@ -102,7 +102,7 @@ if (isset($_POST["action"])) {
                         $productTypeId = $productType["pdt_id"];
                         $productTypeName = $productType["pdt_name"]; ?>
 
-                        <option value="<?= $productTypeId ?>" <?= ($productTypeId == $pdt_id) ? "selected" : "" ?>>
+                        <option value="<?= $productTypeId ?>" <?= $productTypeId == $pdt_id ? "selected" : "" ?>>
                             <?= $productTypeName ?>
                         </option>
                     <?php } ?>

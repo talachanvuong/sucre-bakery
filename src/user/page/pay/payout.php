@@ -34,8 +34,7 @@ if (isset($_POST["action"])) {
         "od_person_receive" => $od_person_receive,
         "od_address" => $od_address,
         "od_number_phone" => $od_number_phone,
-        "od_price" => $od_price,
-        "od_note" => ""
+        "od_price" => $od_price
     ];
 
     $result = $api->create_order($us_id, $order);

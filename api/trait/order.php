@@ -13,9 +13,9 @@ trait Order
 
         $sql = "INSERT INTO `order` (`od_id`, `od_created_on`, `od_delivery_time`,
                                      `od_person_receive`, `od_address`, `od_number_phone`,
-                                     `od_price`, `od_reason`, `us_id`, `os_id`, `ad_id`)
+                                     `od_price`, `us_id`, `os_id`, `ad_id`)
                 VALUES ('$od_id', '$od_created_on', '$od_delivery_time', '$od_person_receive',
-                        '$od_address', '$od_number_phone', '$od_price', '', '$us_id', '1', NULL);";
+                        '$od_address', '$od_number_phone', '$od_price', '$us_id', '1', NULL);";
 
         try {
             $this->connection->query($sql);
@@ -52,7 +52,7 @@ trait Order
                 INNER JOIN `order_status`
                 ON `order`.`os_id` = `order_status`.`os_id`
                 WHERE `us_id` = '$us_id'
-                ORDER BY `od_created_on` DESC;";
+                ORDER BY `order`.`od_created_on` DESC;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -60,10 +60,12 @@ trait Order
     function get_order_info($od_id)
     {
         $sql = "SELECT *
-                FROM `order`
-                INNER JOIN `order_status`
-                ON `order`.`os_id` = `order_status`.`os_id`
-                WHERE `od_id` = '$od_id';";
+                FROM `order` as o
+                INNER JOIN `order_status` as os
+                ON o.`os_id` = os.`os_id`
+                INNER JOIN `user` as us
+                ON o.`us_id` = us.`us_id`
+                WHERE o.`od_id` = '$od_id';";
         $result = $this->connection->query($sql);
         return $result->fetch_assoc();
     }

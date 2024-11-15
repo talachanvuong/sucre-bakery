@@ -15,13 +15,11 @@ $order = $api->get_order_info($od_id);
         <h2 class="particular-title">Chi Tiết Đơn Hàng</h2>
         <p><strong>Mã đơn hàng: </strong> <?= $order["od_id"] ?></p>
 
-        <p><strong>Ngày đặt: </strong><?= $order["od_created_on"] ?></p>
+        <p><strong>Ngày đặt: </strong><?= convert_datetime($order["od_created_on"]) ?></p>
 
-        <p><strong>Ngày Giao: </strong><?= $order["od_delivery_time"] ?></p>
+        <p><strong>Ngày Giao: </strong><?= convert_datetime($order["od_delivery_time"]) ?></p>
 
-        <p><strong>Tên người đặt: </strong><?= $us_info["us_name"] ?></p>
-
-        <p><strong>Tên người nhận: </strong><?= $order["od_person_receive"] ?></p>
+        <p><strong>Người nhận: </strong><?= $order["od_person_receive"] ?></p>
 
         <p><strong>Địa chỉ: </strong><?= $order["od_address"] ?></p>
 

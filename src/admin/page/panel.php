@@ -55,7 +55,7 @@ $ad_info = $api->get_admin_info();
                 TỔNG QUAN
             </p>
 
-            <a class="component" href="">
+            <a class="component" href="?direct=all">
                 <div class="select"></div>
 
                 <svg class="icon" viewBox="0 0 45.96 45.96">
@@ -75,7 +75,7 @@ $ad_info = $api->get_admin_info();
                 </p>
             </a>
 
-            <a class="component" href="">
+            <a class="component" href="?direct=wait">
                 <div class="select"></div>
 
                 <svg class="icon" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@ $ad_info = $api->get_admin_info();
                 </p>
             </a>
 
-            <a class="component" href="">
+            <a class="component" href="?direct=work">
                 <div class="select"></div>
 
                 <svg class="icon" viewBox="0 0 512 512">
@@ -104,7 +104,7 @@ $ad_info = $api->get_admin_info();
                 </p>
             </a>
 
-            <a class="component" href="">
+            <a class="component" href="?direct=done">
                 <div class="select"></div>
 
                 <svg class="icon" viewBox="0 0 48 48">
@@ -118,7 +118,7 @@ $ad_info = $api->get_admin_info();
                 </p>
             </a>
 
-            <a class="component" href="">
+            <a class="component" href="?direct=cancel">
                 <div class="select"></div>
 
                 <svg class="icon" viewBox="0 0 512 512">
@@ -174,6 +174,31 @@ $ad_info = $api->get_admin_info();
             // Account
             case "home":
                 require "./src/admin/page/home.php";
+                break;
+
+            // Statistic
+            case "all":
+                require "./src/admin/page/statistic/all.php";
+                break;
+
+            case "wait":
+                require "./src/admin/page/statistic/wait.php";
+                break;
+
+            case "work":
+                require "./src/admin/page/statistic/work.php";
+                break;
+
+            case "done":
+                require "./src/admin/page/statistic/done.php";
+                break;
+
+            case "cancel":
+                require "./src/admin/page/statistic/cancel.php";
+                break;
+
+            case "detail":
+                require "./src/admin/page/statistic/detail.php";
                 break;
 
             // Product

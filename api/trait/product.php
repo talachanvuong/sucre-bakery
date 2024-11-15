@@ -10,20 +10,14 @@ trait Product
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    function get_total_pages($productPerPage)
+    function get_products_by_page($page, $itemPerPage)
     {
-        $totalProducts = count($this->get_products());
-        return ceil($totalProducts / $productPerPage);
-    }
-
-    function get_products_by_page($page, $productPerPage)
-    {
-        $indexPage = ($page - 1) * $productPerPage;
+        $indexPage = ($page - 1) * $itemPerPage;
 
         $sql = "SELECT *
                 FROM `product`
                 ORDER BY `pd_last_update` DESC
-                LIMIT $indexPage, $productPerPage;";
+                LIMIT $indexPage, $itemPerPage;";
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }

@@ -11,7 +11,7 @@ $orders = $api->get_history_order($us_id);
 <div class="layout-container">
     <div class="history-container">
         <p class="history-title">Lịch Sử Mua Hàng</p>
-        
+
         <?php if (empty($orders)) { ?>
             <p class="no-history">Bạn chưa có đơn hàng nào!</p>
         <?php } else { ?>
@@ -21,7 +21,6 @@ $orders = $api->get_history_order($us_id);
                         <th>Mã Đơn Hàng</th>
                         <th>Ngày Đặt Hàng</th>
                         <th>Ngày Giao Hàng</th>
-                        <th>Ghi Chú</th>
                         <th>Tình Trạng</th>
                         <th>Thông Tin Đơn Hàng</th>
                     </tr>
@@ -30,13 +29,12 @@ $orders = $api->get_history_order($us_id);
                 <tbody>
                     <?php foreach ($orders as $order): ?>
                         <tr>
-                            <td><?= $order['od_id'] ?></td>
-                            <td><?= $order['od_created_on'] ?></td>
-                            <td><?= $order['od_delivery_time'] ?></td>
-                            <td><?= $order['od_reason'] ?? '' ?></td>
-                            <td><?= $order['os_name'] ?></td> 
+                            <td><?= $order["od_id"] ?></td>
+                            <td><?= convert_datetime($order["od_created_on"]) ?></td>
+                            <td><?= convert_datetime($order["od_delivery_time"]) ?></td>
+                            <td><?= $order["os_name"] ?></td>
                             <td>
-                                <a class="infor-btn" href="?direct=particular&od_id=<?php echo $order['od_id']; ?>">Chi tiết</a>
+                                <a class="infor-btn" href="?direct=particular&od_id=<?php echo $order["od_id"]; ?>">Chi tiết</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

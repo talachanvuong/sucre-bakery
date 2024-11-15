@@ -13,10 +13,11 @@ if (isset($_POST["action"])) {
     }
 }
 
-$productPerPage = 3;
-$totalPages = $api->get_total_pages($productPerPage);
+$itemPerPage = 3;
+$allProducts = $api->get_products();
+$totalPages = get_total_pages($itemPerPage, $allProducts);
 $currentPage = get_current_page($totalPages);
-$products = $api->get_products_by_page($currentPage, $productPerPage);
+$products = $api->get_products_by_page($currentPage, $itemPerPage);
 ?>
 
 <p class="title">Danh sách sản phẩm</p>

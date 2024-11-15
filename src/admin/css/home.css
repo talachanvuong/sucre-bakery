@@ -1,101 +1,52 @@
-.container {
-  display: flex;
-}
-
-#label {
-  background-color: aqua;
-  margin: 0px;
-  padding: 5px 0px 5px 0px;
-}
-
-#input {
-  margin: 5px 20px 5px 20px;
-  padding: 5px 0px 5px 0px;
-  height: 20px;
-  width: 200px;
-}
-
-.over-view p {
-  background-color: aqua;
-  margin: 0px;
-  padding: 5px 0px 5px 0px;
-}
-
-.over-view ul {
-  display: block;
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-}
-
-#list-items li {
-  padding: 5px;
-}
-
-#list-items li:hover {
-  background-color: rgb(220, 229, 237);
-}
-
-.product {
-  padding: 8px 0 8px 0;
-}
-
-.product p {
-  background-color: aqua;
-  margin: 0px;
-  padding: 5px 0px 5px 0px;
-}
-
-.product ul {
-  display: block;
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-}
-
-#product-items li {
-  padding: 5px;
-}
-
-#product-items li:hover {
-  background-color: rgb(220, 229, 237);
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.content {
+.content .greeting {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  height: auto;
-  margin-left: 8px;
+  gap: 4px;
 }
-table {
+.content .thumbnail {
+  display: grid;
+  height: 100%;
+  margin-top: 24px;
   width: 100%;
-  border-collapse: collapse; 
-  border: 2px solid #333; 
 }
-th, td {
-  padding: 10px;
-  border: 1px solid #333;
-  text-align: left;
+.greeting .title {
+  color: black;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 28px;
 }
-th {
-  background-color: #f4f4f4; 
+.greeting .name {
+  color: var(--grey-color);
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
 }
-tr:nth-child(even) {
-  background-color: #f9f9f9;
+.thumbnail .image {
+  border-radius: 12px;
+  grid-area: 1/1;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+  width: 100%;
 }
-.status {
-  padding: 5px 10px;
-  border-radius: 5px;
+.thumbnail .time {
+  grid-area: 1/1;
+  margin-bottom: auto;
+  margin-left: 24px;
+  margin-top: auto;
+  width: fit-content;
 }
-.waiting { background-color: #f7d7d7; }
-.accepted { background-color: #ffdd7e; }
-.in-progress { background-color: #fffa7e; }
-.shipping { background-color: #9be8a7; }
-.delivered { background-color: #a7d9f8; }
-.cancelled { background-color: #f8a7a7; }
+.time .day {
+  color: white;
+  font-family: "Roboto";
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 1;
+}
+.time .month {
+  color: white;
+  font-family: "Roboto";
+  font-size: 24px;
+  line-height: 32px;
+}
