@@ -27,8 +27,7 @@ if (isset($_POST["action"])) {
             $api->update_cart_product($us_id, $pd_id, $ca_quantity);
             break;
     }
-    header("location:?direct=cart");
-    exit();
+    redirect("?direct=cart");
 }
 
 $cart = $api->get_cart_products($us_id);

@@ -40,8 +40,7 @@ if (isset($_POST['name']) || isset($_POST['address']) || isset($_POST['phone']))
     } else {
         toast($result["message"]);
     }
-    header("location:?direct=modify");
-    exit();
+    redirect("?direct=modify");
 }
 ?>
 

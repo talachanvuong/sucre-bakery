@@ -11,8 +11,7 @@ if (isset($_POST["username"]) && isset($_POST["phone"]) && isset($_POST["passwor
 
     if ($result["success"]) {
         set_toast_message($result["message"]);
-        header("location:?direct=login");
-        exit();
+        redirect("?direct=login");
     } else {
         toast($result["message"]);
     }

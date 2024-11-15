@@ -10,7 +10,6 @@ require __DIR__ . "/./src/util/redirect.php";
 require __DIR__ . "/./src/util/constant.php";
 
 session_start();
-toast_session();
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +25,8 @@ toast_session();
 
 <body>
     <?php
+    toast_session();
+    
     require "./src/user/page/header.php";
 
     switch (DIRECT) {
@@ -42,8 +43,7 @@ toast_session();
             authorize_user();
             $api->logout_user();
             set_toast_message("Đăng xuất thành công!");
-            header("location:?direct=login");
-            exit();
+            redirect("?direct=login");
 
         case "register":
             block_login_user();
@@ -86,27 +86,22 @@ toast_session();
 
         case "intro":
             require "./src/user/page/footer/intro.php";
-            // require_css("./src/user/css/footer/intro.css");
             break;
 
         case "term":
             require "./src/user/page/footer/term.php";
-            // require_css("./src/user/css/footer/term.css");
             break;
 
         case "policy":
             require "./src/user/page/footer/policy.php";
-            // require_css("./src/user/css/footer/policy.css");
             break;
 
         case "contact":
             require "./src/user/page/footer/contact.php";
-            // require_css("./src/user/css/footer/contact.css");
             break;
 
         case "address":
             require "./src/user/page/footer/address.php";
-            // require_css("./src/user/css/footer/address.css");
             break;
     }
 

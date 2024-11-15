@@ -10,7 +10,6 @@ require __DIR__ . "/./src/util/redirect.php";
 require __DIR__ . "/./src/util/constant.php";
 
 session_start();
-toast_session();
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +25,8 @@ toast_session();
 
 <body>
     <?php
+    toast_session();
+
     switch (DIRECT) {
         case "login":
             block_login_admin();
@@ -36,8 +37,7 @@ toast_session();
             authorize_admin();
             $api->logout_admin();
             set_toast_message("Đăng xuất thành công!");
-            header("location:?direct=login");
-            exit();
+            redirect("?direct=login");
 
         default:
             authorize_admin();

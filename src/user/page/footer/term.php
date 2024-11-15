@@ -1,3 +1,8 @@
+<?php
+require_css("./src/user/css/footer/term.css");
+global $api;
+?>
+
 <div class="layout-container">
     <div class= " term-container">
         <p class="term-title">Điều Khoản </p>

@@ -43,8 +43,7 @@ if (isset($_POST["action"])) {
     if ($result["success"]) {
         $api->clear_cart($us_id);
         set_toast_message($result["message"]);
-        header("location:?direct=history");
-        exit();
+        redirect("?direct=history");
     } else {
         toast($result["message"]);
     }

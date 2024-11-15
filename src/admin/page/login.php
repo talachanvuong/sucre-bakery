@@ -10,8 +10,7 @@ if (isset($_POST["ad_name"]) && isset($_POST["ad_password"])) {
 
     if ($result["success"]) {
         set_toast_message($result["message"]);
-        header("location:?direct=home");
-        exit();
+        redirect("?direct=home");
     } else {
         toast($result["message"]);
     }

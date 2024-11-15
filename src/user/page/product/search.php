@@ -41,7 +41,7 @@ if (isset($_GET["keyword"])) {
         <form method="get">
             <input type="hidden" name="direct" value="search">
             <input type="hidden" name="min" value="300000">
-            <input type="hidden" name="max" value="999999">
+            <input type="hidden" name="max" value="9007199254740991">
             <input class="search-submit" type="submit" value="Trên 300.000₫">
         </form>
     </div>

@@ -32,31 +32,30 @@ function toast($message)
 
     <style class="toast-style">
         .toast-panel {
-            width: 25%;
-            position: fixed;
-            bottom: 20px;
-            left: -25%;
-
+            animation: move-toast-panel-in 0.4s ease forwards;
             background-color: var(--white-color);
             border-bottom-left-radius: 16px;
             border-bottom-right-radius: 16px;
+            bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: move-toast-panel-in 0.4s ease forwards;
+            left: -25%;
+            position: fixed;
+            width: 25%;
             z-index: 3;
         }
 
         .toast-process {
-            width: 0%;
-            height: 6px;
-            background-color: var(--brown-color);
             animation: move-toast-process 4s linear forwards;
+            background-color: var(--brown-color);
+            height: 6px;
+            width: 0%;
         }
 
         .toast-message {
+            color: var(--black-color);
             font-family: "Roboto";
             font-size: 20px;
             line-height: 28px;
-            color: var(--black-color);
             padding: 16px;
         }
 
@@ -120,7 +119,7 @@ function toast($message)
                 }, 400);
             }, 4000);
         }
-        
+
         hide_toast();
     </script>
 <?php } ?>
