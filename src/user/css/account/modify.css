@@ -1,64 +1,60 @@
 .layout-container {
-    width: 60%;
-    min-height: 100vh;
-    padding-top: calc(80px + 86px); /* Header: 86px */
-    padding-bottom: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-  
-  .modify-container {
-    background-color: var(--cream-color);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px var(--shadow-color);
-  }
-  
-  .modify-title {
-    font-family: "Roboto";
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  padding-top: calc(80px + 86px);
+  width: 60%;
 
+  /* Header: 86px */
+}
+.modify-container {
+  background-color: var(--cream-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  padding: 40px;
+}
+.modify-title {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 .input-group {
-    margin-bottom: 15px;
-    text-align: left;
+  margin-bottom: 15px;
+  text-align: left;
 }
-
 .input-group label {
-    font-family: "Roboto";
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: black;
+  color: black;
+  display: block;
+  font-family: "Roboto";
+  font-size: 14px;
+  margin-bottom: 5px;
 }
-
 .input-group input {
-    font-family: "Roboto";
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
 }
-
 .btn {
-    background-color: var(--brown-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: 0.3s;
+  background-color: var(--brown-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  width: 100%;
 }
-
 .btn:hover {
-    background-color: bisque;
-    color: var(--brown-color);
+  background-color: bisque;
+  color: var(--brown-color);
 }
