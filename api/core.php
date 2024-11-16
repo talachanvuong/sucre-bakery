@@ -4,6 +4,7 @@ require __DIR__ . "/./trait/cart.php";
 require __DIR__ . "/./trait/account.php";
 require __DIR__ . "/./trait/order.php";
 require __DIR__ . "/./trait/statistic.php";
+
 class Api
 {
     private $connection;

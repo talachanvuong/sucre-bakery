@@ -27,14 +27,12 @@ session_start();
 <body>
     <?php
     toast_session();
-    
+
+    // Header
     require "./src/user/page/header.php";
 
     switch (DIRECT) {
-        case "product":
-            require "./src/user/page/product/product.php";
-            break;
-
+        // Account
         case "login":
             block_login_user();
             require "./src/user/page/account/login.php";
@@ -46,66 +44,78 @@ session_start();
             set_toast_message("Đăng xuất thành công!");
             redirect("?direct=login");
 
-        case "register":
-            block_login_user();
-            require "./src/user/page/account/register.php";
-            break;
-
         case "modify":
             authorize_user();
             require "./src/user/page/account/modify.php";
             break;
 
+        case "register":
+            block_login_user();
+            require "./src/user/page/account/register.php";
+            break;
+
+        // Product
         case "detail":
             require "./src/user/page/product/detail.php";
+            break;
+
+        case "product":
+            require "./src/user/page/product/product.php";
             break;
 
         case "search":
             require "./src/user/page/product/search.php";
             break;
 
+        // Pay
         case "cart":
             authorize_user();
             require "./src/user/page/pay/cart.php";
             break;
 
-        case "home":
-            require "./src/user/page/home.php";
-            break;
-
-        case "payout":
-            require "./src/user/page/pay/payout.php";
-            break;
-
         case "history":
+            authorize_user();
             require "./src/user/page/pay/history.php";
             break;
 
         case "particular":
+            authorize_user();
             require "./src/user/page/pay/particular.php";
             break;
 
-        case "intro":
-            require "./src/user/page/footer/intro.php";
+        case "payout":
+            authorize_user();
+            require "./src/user/page/pay/payout.php";
             break;
 
-        case "term":
-            require "./src/user/page/footer/term.php";
-            break;
-
-        case "policy":
-            require "./src/user/page/footer/policy.php";
+        // Footer
+        case "address":
+            require "./src/user/page/footer/address.php";
             break;
 
         case "contact":
             require "./src/user/page/footer/contact.php";
             break;
 
-        case "address":
-            require "./src/user/page/footer/address.php";
+        case "intro":
+            require "./src/user/page/footer/intro.php";
+            break;
+
+        case "policy":
+            require "./src/user/page/footer/policy.php";
+            break;
+
+        case "term":
+            require "./src/user/page/footer/term.php";
+            break;
+
+        // Else
+        case "home":
+            require "./src/user/page/home.php";
             break;
     }
 
+    // Footer
     require "./src/user/page/footer/footer.php";
     ?>
 </body>

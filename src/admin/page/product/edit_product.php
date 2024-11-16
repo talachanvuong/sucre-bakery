@@ -1,5 +1,5 @@
 <?php
-require_css("./src/admin/css/product/handle_product.css");
+require_css("./src/admin/css/product/handle.css");
 global $api;
 
 $pd_id = $_POST["pd_id"];

@@ -23,7 +23,7 @@
   font-family: "Roboto";
   font-size: 30px;
   line-height: 36px;
-  color: var(--bisque-color);
+  color: bisque;
   background-color: var(--brown-color);
   font-weight: bold;
   text-decoration: none;
@@ -33,6 +33,6 @@
 }
 
 .button:hover {
-  background-color: var(--bisque-color);
+  background-color: bisque;
   color: var(--brown-color);
 }

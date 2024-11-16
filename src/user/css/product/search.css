@@ -21,7 +21,7 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: bold;
-  color: var(--bisque-color);
+  color: bisque;
   background-color: var(--brown-color);
   padding: 8px 16px;
   border: none;
@@ -34,8 +34,8 @@
   font-family: "Roboto";
   font-size: 20px;
   line-height: 28px;
-  color: var(--black-color);
-  background-color: var(--white-color);
+  color: black;
+  background-color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 9999px;
@@ -47,7 +47,7 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: bold;
-  color: var(--bisque-color);
+  color: bisque;
   background-color: var(--brown-color);
   padding: 8px 16px;
   border: none;
@@ -57,7 +57,7 @@
 
 .search-result {
   width: 100%;
-  background-color: var(--bisque-color);
+  background-color: bisque;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -87,7 +87,7 @@
   font-family: "Roboto";
   font-size: 20px;
   line-height: 28px;
-  color: var(--black-color);
+  color: black;
   font-weight: bold;
   text-align: center;
   margin-top: 12px;
@@ -101,7 +101,7 @@
   font-family: "Roboto";
   font-size: 18px;
   line-height: 28px;
-  color: var(--black-color);
+  color: black;
   text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -112,7 +112,7 @@
   font-size: 18px;
   line-height: 28px;
   font-weight: bold;
-  color: var(--bisque-color);
+  color: bisque;
   background-color: var(--brown-color);
   padding: 8px 16px;
   text-decoration: none;
@@ -126,7 +126,7 @@
   line-height: 28px;
   text-align: center;
   color: var(--brown-color);
-  background-color: var(--bisque-color);
+  background-color: bisque;
   padding: 16px;
   box-sizing: border-box;
 }

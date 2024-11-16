@@ -3,10 +3,10 @@ require_css("./src/admin/css/statistic/list.css");
 global $api;
 
 $itemPerPage = 10;
-$allOrders = $api->get_orders_wait();
+$allOrders = $api->get_orders_by_status(1);
 $totalPages = get_total_pages($itemPerPage, $allOrders);
 $currentPage = get_current_page($totalPages);
-$orders = $api->get_orders_wait_by_page($currentPage, $itemPerPage);
+$orders = $api->get_orders_by_status_on_page(1, $currentPage, $itemPerPage);
 ?>
 
 <p class="title">Đơn chờ tiếp nhận</p>

@@ -12,7 +12,7 @@
   background-color: var(--cream-color);
   padding: 20px 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
   width: 100%;
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@
   font-family: "Roboto";
   margin-bottom: 20px;
   font-size: 24px;
-  color: var(--black-color);
+  color: black;
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
-  color: var(--black-color);
+  color: black;
 }
 
 .input-group input {
@@ -49,7 +49,7 @@
 
 .btn {
   background-color: var(--brown-color);
-  color: var(--white-color);
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -60,7 +60,7 @@
 }
 
 .btn:hover {
-  background-color: var(--bisque-color);
+  background-color: bisque;
   color: var(--brown-color);
 }
 
@@ -72,7 +72,7 @@
 
 .login p {
   font-size: 14px;
-  color: var(--black-color);
+  color: black;
 }
 
 .login a {

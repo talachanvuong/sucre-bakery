@@ -29,6 +29,7 @@ session_start();
     toast_session();
 
     switch (DIRECT) {
+        // Account
         case "login":
             block_login_admin();
             require "./src/admin/page/login.php";
@@ -40,6 +41,7 @@ session_start();
             set_toast_message("Đăng xuất thành công!");
             redirect("?direct=login");
 
+        // Else
         default:
             authorize_admin();
             require "./src/admin/page/panel.php";

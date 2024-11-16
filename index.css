@@ -9,30 +9,6 @@
   initial-value: #470c0e;
 }
 
-@property --bisque-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #ffe4c4;
-}
-
-@property --pink-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #ffe2e2;
-}
-
-@property --white-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #ffffff;
-}
-
-@property --black-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #000000;
-}
-
 @property --blue-color {
   syntax: "<color>";
   inherits: false;
@@ -58,7 +34,7 @@
 }
 
 body {
-  background-color: var(--pink-color);
+  background-color: pink;
 }
 
 html::-webkit-scrollbar {

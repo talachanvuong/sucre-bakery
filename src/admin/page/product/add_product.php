@@ -1,5 +1,5 @@
 <?php
-require_css("./src/admin/css/product/handle_product.css");
+require_css("./src/admin/css/product/handle.css");
 global $api;
 
 if (isset($_POST["action"])) {

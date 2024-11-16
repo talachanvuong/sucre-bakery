@@ -19,7 +19,7 @@
   z-index: 2;
 }
 .content {
-  background-color: var(--white-color);
+  background-color: white;
   border-radius: 0px 24px 24px 0px;
   box-sizing: border-box;
   display: flex;
@@ -34,7 +34,7 @@
   margin-top: 12px;
 }
 .menu .title {
-  color: var(--black-color);
+  color: black;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: bold;

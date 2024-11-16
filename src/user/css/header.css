@@ -13,7 +13,7 @@ header {
     font-family: "Roboto";
     font-size: 30px;
     line-height: 36px;
-    color: var(--bisque-color);
+    color: bisque;
     font-weight: bold;
     text-decoration: none;
 }
@@ -26,7 +26,7 @@ header {
     font-family: "Roboto";
     font-size: 18px;
     line-height: 28px;
-    color: var(--bisque-color);
+    color: bisque;
     font-weight: bold;
 
     border-radius: 9999px;
@@ -37,7 +37,7 @@ header {
 }
 
 .header-option:hover {
-    background-color: var(--bisque-color);
+    background-color: bisque;
     color: var(--brown-color);
 }
 
@@ -48,7 +48,7 @@ header {
     font-family: "Roboto";
     font-size: 18px;
     line-height: 28px;
-    color: var(--bisque-color);
+    color: bisque;
     font-weight: bold;
 
     border-radius: 9999px;
@@ -59,7 +59,7 @@ header {
 }
 
 .header-cart:hover {
-    background-color: var(--bisque-color);
+    background-color: bisque;
     color: var(--brown-color);
 }
 
@@ -75,7 +75,7 @@ header {
     font-family: "Roboto";
     font-size: 18px;
     line-height: 28px;
-    color: var(--bisque-color);
+    color: bisque;
     font-weight: bold;
 
     border-radius: 9999px;
@@ -91,6 +91,6 @@ header {
 
 
 .header-name:hover {
-    background-color: var(--bisque-color);
+    background-color: bisque;
     color: var(--brown-color);
 }

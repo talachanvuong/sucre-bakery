@@ -33,11 +33,11 @@ function toast($message)
     <style class="toast-style">
         .toast-panel {
             animation: move-toast-panel-in 0.4s ease forwards;
-            background-color: var(--white-color);
+            background-color: white;
             border-bottom-left-radius: 16px;
             border-bottom-right-radius: 16px;
             bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px var(--shadow-color);
             left: -25%;
             position: fixed;
             width: 25%;
@@ -52,7 +52,7 @@ function toast($message)
         }
 
         .toast-message {
-            color: var(--black-color);
+            color: black;
             font-family: "Roboto";
             font-size: 20px;
             line-height: 28px;

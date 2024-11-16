@@ -13,13 +13,13 @@
   background-color: var(--cream-color);
   padding: 20px 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
   box-sizing: border-box;
   padding: 20px 40px;
   width: 100%;
 }
 .login-container h2 {
-  color: var(--black-color);
+  color: black;
   font-family: "Roboto";
   font-size: 24px;
   margin-bottom: 20px;
@@ -29,7 +29,7 @@
   margin-bottom: 15px;
 }
 .input-group label {
-  color: var(--black-color);
+  color: black;
   display: block;
   font-family: "Roboto";
   font-size: 14px;
@@ -46,10 +46,10 @@
 }
 .btn {
   background-color: var(--brown-color);
-  color: var(--white-color);
+  color: white;
   border: none;
   border-radius: 5px;
-  color: var(--white-color);
+  color: white;
   cursor: pointer;
   font-size: 16px;
   padding: 10px 20px;
@@ -57,7 +57,7 @@
   width: 100%;
 }
 .btn:hover {
-  background-color:var(--bisque-color);
+  background-color:bisque;
   color: var(--brown-color);
 }
 .register {
@@ -66,7 +66,7 @@
   text-align: center;
 }
 .register p {
-  color: var(--black-color);
+  color: black;
   font-size: 14px;
 }
 .register a {

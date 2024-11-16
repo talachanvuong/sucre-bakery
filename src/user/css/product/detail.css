@@ -36,7 +36,7 @@
   font-family: "Roboto";
   font-size: 36px;
   line-height: 40px;
-  color: var(--black-color);
+  color: black;
   font-weight: bold;
 }
 
@@ -44,7 +44,7 @@
   font-family: "Roboto";
   font-size: 18px;
   line-height: 28px;
-  color: var(--black-color);
+  color: black;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -53,21 +53,21 @@
   font-family: "Roboto";
   font-size: 18px;
   line-height: 28px;
-  color: var(--black-color);
+  color: black;
   text-align: justify;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
 .seperate {
-  border: 1px solid var(--black-color);
+  border: 1px solid black;
 }
 
 .title {
   font-family: "Roboto";
   font-size: 18px;
   line-height: 28px;
-  color: var(--black-color);
+  color: black;
   font-weight: bold;
 }
 
@@ -81,7 +81,7 @@
   font-size: 20px;
   line-height: 28px;
   text-align: center;
-  color: var(--bisque-color);
+  color: bisque;
   background-color: var(--brown-color);
   font-weight: bold;
   border-radius: 9999px;

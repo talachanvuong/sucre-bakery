@@ -2,10 +2,10 @@
 require_css("./src/admin/css/statistic/all.css");
 global $api;
 
-$waitNumber = $api->get_order_wait_number();
-$workNumber = $api->get_order_work_number();
-$doneNumber = $api->get_order_done_number();
-$cancelNumber = $api->get_order_cancel_number();
+$waitNumber = $api->get_order_count_by_status(1);
+$workNumber = $api->get_order_count_by_status(2);
+$doneNumber = $api->get_order_count_by_status(3);
+$cancelNumber = $api->get_order_count_by_status(4);
 ?>
 
 <p class="title">Thống kê</p>

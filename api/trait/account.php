@@ -112,7 +112,7 @@ trait Account
 
         $sql = "UPDATE `user`
                 SET $update
-                WHERE `us_id` = $us_id;";
+                WHERE `us_id` = '$us_id';";
 
         try {
             $this->connection->query($sql);

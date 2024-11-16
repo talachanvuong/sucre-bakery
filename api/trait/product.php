@@ -6,6 +6,7 @@ trait Product
         $sql = "SELECT *
                 FROM `product`
                 ORDER BY `pd_id` ASC;";
+
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -18,6 +19,7 @@ trait Product
                 FROM `product`
                 ORDER BY `pd_last_update` DESC
                 LIMIT $indexPage, $itemPerPage;";
+
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -28,6 +30,7 @@ trait Product
                 FROM `product`
                 WHERE `pd_name` LIKE '%$keyword%'
                 ORDER BY `pd_id` ASC;";
+
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -36,7 +39,8 @@ trait Product
     {
         $sql = "SELECT *
                 FROM `product`
-                WHERE `pd_id` = $pd_id;";
+                WHERE `pd_id` = '$pd_id';";
+
         $result = $this->connection->query($sql);
         return $result->fetch_assoc();
     }
@@ -45,8 +49,9 @@ trait Product
     {
         $sql = "SELECT *
                 FROM `product`
-                WHERE `pdt_id` = $pdt_id
+                WHERE `pdt_id` = '$pdt_id'
                 ORDER BY `pdt_id` ASC;";
+
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -55,7 +60,8 @@ trait Product
     {
         $sql = "SELECT *
                 FROM `product_type`
-                WHERE `pdt_id` = $pdt_id;";
+                WHERE `pdt_id` = '$pdt_id';";
+
         $result = $this->connection->query($sql);
         return $result->fetch_assoc();
     }
@@ -65,6 +71,7 @@ trait Product
         $sql = "SELECT *
                 FROM `product_type`
                 ORDER BY `pdt_id` ASC;";
+
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -73,8 +80,9 @@ trait Product
     {
         $sql = "SELECT *
                 FROM `product`
-                WHERE `pd_price` BETWEEN $min AND $max
+                WHERE `pd_price` BETWEEN '$min' AND '$max'
                 ORDER BY `pd_id` ASC;";
+
         $result = $this->connection->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -85,7 +93,7 @@ trait Product
 
         // pd_image is image so doesn't need to put into ''
         $sql = "INSERT INTO `product` (`pd_name`, `pd_price`, `pd_description`, `pdt_id`, `pd_image`, `pd_last_update`)
-                VALUES ('$pd_name', $pd_price, '$pd_description', $pdt_id, $pd_image, NOW());";
+                VALUES ('$pd_name', '$pd_price', '$pd_description', '$pdt_id', $pd_image, NOW());";
 
         try {
             $this->connection->query($sql);
@@ -104,7 +112,7 @@ trait Product
     function remove_product($pd_id)
     {
         $sql = "DELETE FROM `product`
-                WHERE `pd_id` = $pd_id;";
+                WHERE `pd_id` = '$pd_id';";
 
         try {
             $this->connection->query($sql);
@@ -147,7 +155,7 @@ trait Product
 
         $sql = "UPDATE `product`
                 SET $update
-                WHERE `pd_id` = $pd_id;";
+                WHERE `pd_id` = '$pd_id';";
 
         try {
             $this->connection->query($sql);

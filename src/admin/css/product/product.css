@@ -1,5 +1,5 @@
 .content .title {
-  color: var(--black-color);
+  color: black;
   font-family: "Roboto";
   font-size: 20px;
   font-weight: bold;
@@ -74,7 +74,7 @@
   background-color: firebrick;
 }
 .item-detail .product-name {
-  color: var(--black-color);
+  color: black;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: bold;

@@ -12,14 +12,14 @@
   background-color: var(--cream-color);
   padding: 20px 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .title {
   font-family: "Roboto";
   margin-bottom: 20px;
   font-size: 24px;
-  color: var(--black-color);
+  color: black;
   text-align: center;
 }
 
@@ -37,7 +37,7 @@
   font-family: "Roboto";
   font-size: 16px;
   line-height: 24px;
-  color: var(--black-color);
+  color: black;
 }
 
 .input-group {
@@ -48,7 +48,7 @@
   font-family: "Roboto";
   margin-bottom: 5px;
   font-size: 14px;
-  color: var(--black-color);
+  color: black;
 }
 
 .input-group input {
@@ -64,7 +64,7 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--white-color);
+  background-color: white;
 }
 
 .table th {
@@ -75,7 +75,7 @@
   text-align: center;
   background-color: #f4f4f4;
 
-  border: 1px solid var(--black-color);
+  border: 1px solid black;
   padding: 8px;
   align-content: center;
 }
@@ -84,7 +84,7 @@
   font-family: "Roboto";
   font-size: 16px;
   line-height: 24px;
-  border: 1px solid var(--black-color);
+  border: 1px solid black;
   padding: 8px;
   align-content: center;
 }
@@ -136,7 +136,7 @@
 
 .btn {
   background-color: var(--brown-color);
-  color: var(--white-color);
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -147,6 +147,6 @@
 }
 
 .btn:hover {
-  background-color: var(--bisque-color);
+  background-color: bisque;
   color: var(--brown-color);
 }
