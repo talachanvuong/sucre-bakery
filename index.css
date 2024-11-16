@@ -9,6 +9,12 @@
   initial-value: #470c0e;
 }
 
+@property --pink-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffe2e2;
+}
+
 @property --blue-color {
   syntax: "<color>";
   inherits: false;
@@ -34,7 +40,7 @@
 }
 
 body {
-  background-color: pink;
+  background-color: var(--pink-color);
 }
 
 html::-webkit-scrollbar {
