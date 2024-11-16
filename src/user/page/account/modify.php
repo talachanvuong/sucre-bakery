@@ -46,11 +46,11 @@ if (isset($_POST['name']) || isset($_POST['address']) || isset($_POST['phone']))
 
 <div class="layout-container">
     <div class="modify-container">
-        <h2>Sửa thông tin</h2>
+    <p class="modify-title">Sửa thông tin</p>
         <form method="post">
 
             <div class="input-group">
-                <label for="name">Họ và tên:</label>
+                <label for="name">Tên:</label>
                 <input type="text" id="name" name="name" placeholder="Nhập tên" minlength="3" maxlength="50"
                     value="<?= $us_name ?>">
             </div>
