@@ -24,7 +24,7 @@ $orders = $api->get_orders_by_status_on_page(1, $currentPage, $itemPerPage);
         foreach ($orders as $order) { ?>
             <tr>
                 <td><?= $order["od_id"] ?></td>
-                <td><?= $order["od_delivery_time"] ?></td>
+                <td><?= convert_datetime($order["od_delivery_time"]) ?></td>
                 <td>
                     <a class="detail-button" href="?direct=detail&od_id=<?= $order["od_id"] ?>">Xem chi tiết</a>
                 </td>
